@@ -79,8 +79,8 @@ header .bar{display:flex;align-items:center;justify-content:space-between;gap:1r
 header.scrolled{background:rgba(246,241,231,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
 header.scrolled .bar{padding:.6rem 0}
 .brand{display:flex;align-items:center;text-decoration:none}
-.brand img.logo-img{width:150px;height:auto;max-height:85px;object-fit:contain;flex:none;transition:max-height .4s var(--ease)}
-header.scrolled .brand img.logo-img{max-height:65px}
+.brand img.logo-img{width:180px;height:auto;max-height:95px;object-fit:contain;flex:none;transition:max-height .4s var(--ease)}
+header.scrolled .brand img.logo-img{max-height:75px}
 nav.desk{display:flex;align-items:center;gap:1.7rem}
 nav.desk a.nl{text-decoration:none;font-size:.94rem;font-weight:500;color:var(--ink);position:relative;padding:.2rem 0}
 nav.desk a.nl::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:1.5px;background:var(--camel);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
@@ -198,12 +198,15 @@ nav.desk a.nl:hover::after{transform:scaleX(1);transform-origin:left}
 .sv .tagf{margin-top:1rem;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--camel);font-weight:700}
 
 /* ---------- expertise ---------- */
-.expertise{background:var(--olive-deep);color:var(--paper);overflow:hidden}
+.expertise{background:var(--olive-deep);color:var(--paper);}
+.expertise .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,5rem);align-items:start;}
+.expertise .ex-img-col{position:sticky;top:110px;}
+.expertise .ex-img-col img{width:100%;height:auto;border-radius:22px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);display:block;}
 .expertise .eyebrow{color:#D9B888}.expertise .eyebrow::before{background:#D9B888}
 .expertise .sec-title{color:var(--paper)}
 .expertise .sec-title em{color:#D9B888}
 .expertise .lead{color:rgba(246,241,231,.72)}
-.ex-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(246,241,231,.16);border:1px solid rgba(246,241,231,.16);border-radius:20px;overflow:hidden;margin-top:2.6rem}
+.ex-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(246,241,231,.16);border:1px solid rgba(246,241,231,.16);border-radius:20px;overflow:hidden;margin-top:2.6rem}
 .ex{background:var(--olive-deep);padding:1.7rem 1.4rem;transition:background .45s}
 .ex:hover{background:#4A4D3A}
 .ex .n{font-family:var(--serif);font-style:italic;font-size:.95rem;color:#D9B888;display:block;margin-bottom:.7rem}
@@ -319,7 +322,7 @@ nav.desk a.nl:hover::after{transform:scaleX(1);transform-origin:left}
 footer{background:var(--olive-deep);color:rgba(246,241,231,.75);padding:3.4rem 0 2rem;border-top:1px solid rgba(246,241,231,.12)}
 footer .top{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:center;padding-bottom:2rem;border-bottom:1px solid rgba(246,241,231,.12)}
 footer .fbrand{display:flex;align-items:center;gap:.9rem;color:var(--paper)}
-footer .fbrand img.logo-img{width:120px;height:auto;max-height:70px;object-fit:contain}
+footer .fbrand img.logo-img{width:160px;height:auto;max-height:85px;object-fit:contain}
 footer .fbrand b{font-family:var(--serif);display:block;font-size:1.1rem;font-weight:600}
 footer .fbrand span{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:#D9B888}
 footer nav{display:flex;gap:1.4rem;flex-wrap:wrap}
@@ -343,7 +346,6 @@ footer .bottom a:hover{text-decoration:underline}
 /* ---------- responsive ---------- */
 @media(max-width:1040px){
   .sv-grid{grid-template-columns:repeat(2,1fr)}
-  .ex-grid{grid-template-columns:repeat(2,1fr)}
   .gal{grid-template-columns:repeat(3,1fr);grid-auto-rows:170px}
 }
 @media(max-width:880px){
@@ -353,9 +355,10 @@ footer .bottom a:hover{text-decoration:underline}
   .h-fly{order:-1;margin-top:1rem}
   .h-fly svg{width:min(300px,62vw)}
   .hero{padding-top:7rem}
-  .concept .grid,.about .grid,.faq .grid,.contact .grid{grid-template-columns:1fr}
+  .concept .grid,.about .grid,.faq .grid,.contact .grid,.expertise .grid{grid-template-columns:1fr}
   .symb{position:static}
   .a-photo{max-width:440px;margin:0 auto}
+  .expertise .ex-img-col{position:static;margin-bottom:2rem}
   .faq .sticky{position:static}
   .step{grid-template-columns:52px 1fr;gap:1.2rem}
   .path-svg{left:26px;transform:none;width:52px}
@@ -366,7 +369,7 @@ footer .bottom a:hover{text-decoration:underline}
 }
 @media(max-width:640px){
   body{font-size:1rem}
-  .brand img.logo-img{width:110px}
+  .brand img.logo-img{width:130px}
   .sv-grid{grid-template-columns:1fr}
   .ex-grid{grid-template-columns:1fr}
   .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
@@ -386,7 +389,6 @@ footer .bottom a:hover{text-decoration:underline}
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
 <header id="hdr">
   <div class="wrap bar">
     <a class="brand" href="#arxiki" aria-label="Αικατερίνη Βασιλείου">
@@ -414,7 +416,6 @@ footer .bottom a:hover{text-decoration:underline}
   </div>
 </header>
 
-<!-- mobile menu -->
 <div class="mmenu" id="mmenu">
   <button class="mclose" id="mclose" aria-label="Κλείσιμο μενού">✕</button>
   <a href="#taxidi" style="transition-delay:.08s"><span class="l-el">Η Ψυχοθεραπεία</span><span class="l-en">Psychotherapy</span></a>
@@ -431,7 +432,6 @@ footer .bottom a:hover{text-decoration:underline}
   </div>
 </div>
 
-<!-- ================= HERO ================= -->
 <section class="hero" id="arxiki">
   <div class="wrap">
     <div>
@@ -483,7 +483,6 @@ footer .bottom a:hover{text-decoration:underline}
   <div class="h-scroll"><span class="l-el">Κύλιση</span><span class="l-en">Scroll</span></div>
 </section>
 
-<!-- ================= QUOTE ================= -->
 <section class="quote">
   <div class="wrap">
     <blockquote class="rv l-el">Δεν μπορείς να γυρίσεις πίσω και να αλλάξεις την αρχή. Μπορείς όμως να ξεκινήσεις από εκεί που είσαι και να αλλάξεις το τέλος.</blockquote>
@@ -491,7 +490,6 @@ footer .bottom a:hover{text-decoration:underline}
   </div>
 </section>
 
-<!-- ================= CONCEPT / JOURNEY OF THERAPY ================= -->
 <section class="concept pad" id="taxidi">
   <div class="wrap">
     <span class="eyebrow rv"><span class="l-el">Η Ψυχοθεραπεία</span><span class="l-en">Psychotherapy</span></span>
@@ -530,7 +528,6 @@ footer .bottom a:hover{text-decoration:underline}
   </div>
 </section>
 
-<!-- ================= ABOUT ================= -->
 <section class="about pad" id="viografiko">
   <div class="wrap">
     <div class="grid">
@@ -565,7 +562,6 @@ footer .bottom a:hover{text-decoration:underline}
   </div>
 </section>
 
-<!-- ================= SERVICES ================= -->
 <section class="services pad" id="ypiresies">
   <div class="wrap">
     <span class="eyebrow rv"><span class="l-el">Υπηρεσίες</span><span class="l-en">Services</span></span>
@@ -606,28 +602,33 @@ footer .bottom a:hover{text-decoration:underline}
   </div>
 </section>
 
-<!-- ================= EXPERTISE ================= -->
 <section class="expertise pad">
   <div class="wrap">
-    <span class="eyebrow rv"><span class="l-el">Τομείς Εξειδίκευσης</span><span class="l-en">Areas of Expertise</span></span>
-    <h2 class="sec-title rv l-el">Σε τι μπορεί να <em>βοηθήσει</em> η θεραπεία</h2>
-    <h2 class="sec-title rv l-en">What therapy can <em>help</em> with</h2>
-    <p class="lead rv d1 l-el">Η Γνωσιακή-Συμπεριφοριστική Θεραπεία είναι μία από τις πλέον επιστημονικά τεκμηριωμένες προσεγγίσεις για ένα ευρύ φάσμα δυσκολιών.</p>
-    <p class="lead rv d1 l-en">Cognitive Behavioural Therapy is one of the most scientifically supported approaches for a wide range of difficulties.</p>
-    <div class="ex-grid rv-scale d2">
-      <div class="ex"><span class="n">i.</span><h3 class="l-el">Αγχώδεις διαταραχές & φοβίες</h3><h3 class="l-en">Anxiety disorders & phobias</h3><p class="l-el">Γενικευμένο άγχος, κρίσεις πανικού, κοινωνικό άγχος, ειδικές φοβίες.</p><p class="l-en">Generalised anxiety, panic attacks, social anxiety, specific phobias.</p></div>
-      <div class="ex"><span class="n">ii.</span><h3 class="l-el">Διαταραχές διάθεσης</h3><h3 class="l-en">Mood disorders</h3><p class="l-el">Κατάθλιψη, επίμονη θλίψη, απώλεια ενδιαφέροντος και ενέργειας.</p><p class="l-en">Depression, persistent sadness, loss of interest and energy.</p></div>
-      <div class="ex"><span class="n">iii.</span><h3 class="l-el">Ιδεοψυχαναγκαστική διαταραχή</h3><h3 class="l-en">Obsessive-compulsive disorder</h3><p class="l-el">Εμμονικές σκέψεις και καταναγκασμοί, με εξειδικευμένο κλινικό και ερευνητικό έργο στην ΙΨΔ.</p><p class="l-en">Obsessive thoughts and compulsions, with specialised clinical and research work in OCD.</p></div>
-      <div class="ex"><span class="n">iv.</span><h3 class="l-el">Διατροφή & εικόνα σώματος</h3><h3 class="l-en">Eating & body image</h3><p class="l-el">Διαταραχές πρόσληψης τροφής και αρνητική εικόνα σώματος.</p><p class="l-en">Eating disorders and negative body image.</p></div>
-      <div class="ex"><span class="n">v.</span><h3 class="l-el">Σχέσεις & εικόνα εαυτού</h3><h3 class="l-en">Relationships & self-image</h3><p class="l-el">Δυσκολίες στις διαπροσωπικές σχέσεις, χαμηλή αυτοεκτίμηση, αυστηρή αυτοκριτική.</p><p class="l-en">Interpersonal difficulties, low self-esteem, harsh self-criticism.</p></div>
-      <div class="ex"><span class="n">vi.</span><h3 class="l-el">Δύσκολα γεγονότα ζωής</h3><h3 class="l-en">Difficult life events</h3><p class="l-el">Απώλειες, μεταβάσεις και κρίσεις που ανατρέπουν την καθημερινότητα.</p><p class="l-en">Losses, transitions and crises that disrupt everyday life.</p></div>
-      <div class="ex"><span class="n">vii.</span><h3 class="l-el">Χρόνιες ασθένειες</h3><h3 class="l-en">Chronic illness</h3><p class="l-el">Συναισθηματική επιβάρυνση από χρόνια προβλήματα υγείας — για ασθενείς και φροντιστές.</p><p class="l-en">The emotional burden of chronic health conditions — for patients and carers alike.</p></div>
-      <div class="ex"><span class="n">viii.</span><h3 class="l-el">Διαταραχές προσωπικότητας</h3><h3 class="l-en">Personality disorders</h3><p class="l-el">Επίμονα μοτίβα σκέψης και συμπεριφοράς που δυσκολεύουν τη ζωή και τις σχέσεις.</p><p class="l-en">Persistent patterns of thought and behaviour that strain life and relationships.</p></div>
+    <div class="grid">
+      <div class="ex-img-col rv-scale d1">
+        <img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/refs/heads/main/D6458FCC-CBA9-4DC3-9C65-49106A0EAE6E%20Copy.jpeg" alt="Τομείς Εξειδίκευσης – Αικατερίνη Βασιλείου" class="zoom" loading="lazy">
+      </div>
+      <div class="ex-content">
+        <span class="eyebrow rv"><span class="l-el">Τομείς Εξειδίκευσης</span><span class="l-en">Areas of Expertise</span></span>
+        <h2 class="sec-title rv l-el">Σε τι μπορεί να <em>βοηθήσει</em> η θεραπεία</h2>
+        <h2 class="sec-title rv l-en">What therapy can <em>help</em> with</h2>
+        <p class="lead rv d1 l-el">Η Γνωσιακή-Συμπεριφοριστική Θεραπεία είναι μία από τις πλέον επιστημονικά τεκμηριωμένες προσεγγίσεις για ένα ευρύ φάσμα δυσκολιών.</p>
+        <p class="lead rv d1 l-en">Cognitive Behavioural Therapy is one of the most scientifically supported approaches for a wide range of difficulties.</p>
+        <div class="ex-grid rv d2">
+          <div class="ex"><span class="n">i.</span><h3 class="l-el">Αγχώδεις διαταραχές & φοβίες</h3><h3 class="l-en">Anxiety disorders & phobias</h3><p class="l-el">Γενικευμένο άγχος, κρίσεις πανικού, κοινωνικό άγχος, ειδικές φοβίες.</p><p class="l-en">Generalised anxiety, panic attacks, social anxiety, specific phobias.</p></div>
+          <div class="ex"><span class="n">ii.</span><h3 class="l-el">Διαταραχές διάθεσης</h3><h3 class="l-en">Mood disorders</h3><p class="l-el">Κατάθλιψη, επίμονη θλίψη, απώλεια ενδιαφέροντος και ενέργειας.</p><p class="l-en">Depression, persistent sadness, loss of interest and energy.</p></div>
+          <div class="ex"><span class="n">iii.</span><h3 class="l-el">Ιδεοψυχαναγκαστική διαταραχή</h3><h3 class="l-en">Obsessive-compulsive disorder</h3><p class="l-el">Εμμονικές σκέψεις και καταναγκασμοί, με εξειδικευμένο κλινικό και ερευνητικό έργο στην ΙΨΔ.</p><p class="l-en">Obsessive thoughts and compulsions, with specialised clinical and research work in OCD.</p></div>
+          <div class="ex"><span class="n">iv.</span><h3 class="l-el">Διατροφή & εικόνα σώματος</h3><h3 class="l-en">Eating & body image</h3><p class="l-el">Διαταραχές πρόσληψης τροφής και αρνητική εικόνα σώματος.</p><p class="l-en">Eating disorders and negative body image.</p></div>
+          <div class="ex"><span class="n">v.</span><h3 class="l-el">Σχέσεις & εικόνα εαυτού</h3><h3 class="l-en">Relationships & self-image</h3><p class="l-el">Δυσκολίες στις διαπροσωπικές σχέσεις, χαμηλή αυτοεκτίμηση, αυστηρή αυτοκριτική.</p><p class="l-en">Interpersonal difficulties, low self-esteem, harsh self-criticism.</p></div>
+          <div class="ex"><span class="n">vi.</span><h3 class="l-el">Δύσκολα γεγονότα ζωής</h3><h3 class="l-en">Difficult life events</h3><p class="l-el">Απώλειες, μεταβάσεις και κρίσεις που ανατρέπουν την καθημερινότητα.</p><p class="l-en">Losses, transitions and crises that disrupt everyday life.</p></div>
+          <div class="ex"><span class="n">vii.</span><h3 class="l-el">Χρόνιες ασθένειες</h3><h3 class="l-en">Chronic illness</h3><p class="l-el">Συναισθηματική επιβάρυνση από χρόνια προβλήματα υγείας — για ασθενείς και φροντιστές.</p><p class="l-en">The emotional burden of chronic health conditions — for patients and carers alike.</p></div>
+          <div class="ex"><span class="n">viii.</span><h3 class="l-el">Διαταραχές προσωπικότητας</h3><h3 class="l-en">Personality disorders</h3><p class="l-el">Επίμονα μοτίβα σκέψης και συμπεριφοράς που δυσκολεύουν τη ζωή και τις σχέσεις.</p><p class="l-en">Persistent patterns of thought and behaviour that strain life and relationships.</p></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= THERAPEUTIC JOURNEY / PATH ================= -->
 <section class="journey pad" id="diadromi">
   <div class="wrap">
     <span class="eyebrow rv"><span class="l-el">Θεραπευτική Διαδρομή</span><span class="l-en">The Journey</span></span>
@@ -648,7 +649,6 @@ footer .bottom a:hover{text-decoration:underline}
   </div>
 </section>
 
-<!-- ================= SCIENCE / PUBLICATIONS ================= -->
 <section class="science pad">
   <div class="wrap">
     <span class="eyebrow rv"><span class="l-el">Επιστημονική Δραστηριότητα</span><span class="l-en">Scientific Work</span></span>
@@ -679,7 +679,6 @@ footer .bottom a:hover{text-decoration:underline}
   </div>
 </section>
 
-<!-- ================= SPACE GALLERY ================= -->
 <section class="space pad" id="xoros">
   <div class="wrap">
     <span class="eyebrow rv"><span class="l-el">Ο Χώρος</span><span class="l-en">The Space</span></span>
@@ -699,7 +698,6 @@ footer .bottom a:hover{text-decoration:underline}
   </div>
 </section>
 
-<!-- ================= REVIEWS ================= -->
 <section class="reviews pad" id="kritikes">
   <div class="wrap">
     <span class="eyebrow rv"><span class="l-el">Αξιολογήσεις</span><span class="l-en">Reviews</span></span>
@@ -719,7 +717,6 @@ footer .bottom a:hover{text-decoration:underline}
   </div>
 </section>
 
-<!-- ================= FAQ ================= -->
 <section class="faq pad" id="erotiseis">
   <div class="wrap">
     <div class="grid">
@@ -785,7 +782,6 @@ footer .bottom a:hover{text-decoration:underline}
   </div>
 </section>
 
-<!-- ================= CONTACT ================= -->
 <section class="contact pad" id="epikoinonia">
   <div class="wrap">
     <span class="eyebrow rv"><span class="l-el">Επικοινωνία</span><span class="l-en">Contact</span></span>
@@ -814,7 +810,6 @@ footer .bottom a:hover{text-decoration:underline}
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer>
   <div class="wrap">
     <div class="top">
@@ -839,7 +834,6 @@ footer .bottom a:hover{text-decoration:underline}
   </div>
 </footer>
 
-<!-- ================= LIGHTBOX ================= -->
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Προβολή εικόνας">
   <button class="x" id="lbx" aria-label="Κλείσιμο">✕</button>
   <button class="pv" id="lbpv" aria-label="Προηγούμενη">‹</button>
