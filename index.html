@@ -385,6 +385,42 @@ footer .bottom a:hover{text-decoration:underline}
   .fly-dot{opacity:1}
   .draw{stroke-dashoffset:0}
 }
+
+/* — client v2 adjustments — */
+.hero .wrap{grid-template-columns:1fr;max-width:980px}
+.h-eyebrow{text-transform:none!important;letter-spacing:.05em}
+.hero h1 .line:nth-child(4) span{animation-delay:.8s}
+.a-photo .frame{min-height:420px}
+.a-photo .frame img{display:block;width:100%;height:100%;object-fit:cover}
+@media(max-width:860px){.a-photo .frame{min-height:320px}}
+.g.extra img{background:var(--paper,#f4efe8)}
+
+/* — approach / expertise / interest form — */
+.approach .epiq{margin:1.6rem 0 2.2rem;padding:1.4rem 1.6rem;border-left:3px solid var(--bronze,#b08d57);font-style:italic;font-size:1.12rem;line-height:1.65;background:rgba(176,141,87,.06);border-radius:0 12px 12px 0}
+.approach .epiq cite{display:block;margin-top:.7rem;font-style:normal;font-size:.82rem;letter-spacing:.06em;opacity:.75}
+.approach .txtcol{max-width:880px}
+.approach .sub{margin:1.8rem 0 .6rem;font-size:1.18rem;font-weight:600}
+.approach p{margin:.75rem 0;line-height:1.75}
+.approach ul{margin:.6rem 0 .9rem 1.3rem;line-height:1.75}
+details.exd{cursor:default}
+details.exd summary{display:flex;align-items:baseline;gap:.6rem;cursor:pointer;list-style:none}
+details.exd summary::-webkit-details-marker{display:none}
+details.exd summary::after{content:"+";margin-left:auto;font-size:1.15rem;color:var(--bronze,#b08d57);transition:transform .3s}
+details.exd[open] summary::after{content:"−"}
+details.exd .exbody{margin-top:.7rem}
+details.exd .exbody p{margin:.55rem 0;line-height:1.7;font-size:.95rem}
+details.exd .exbody ul{margin:.45rem 0 .7rem 1.15rem;line-height:1.65;font-size:.93rem}
+.exq{margin:.9rem 0;padding:.7rem 1rem;border-left:2px solid var(--bronze,#b08d57);font-style:italic;font-size:.92rem;line-height:1.6;opacity:.92}
+.exq b{display:block;margin-top:.35rem;font-style:normal;font-size:.78rem;letter-spacing:.05em;opacity:.8}
+.iform{margin-top:3rem;padding:clamp(1.6rem,3vw,2.4rem);border:1px solid rgba(0,0,0,.08);border-radius:18px;background:rgba(255,255,255,.6)}
+.iform h3{margin-bottom:.4rem}
+.iform .fnote{font-size:.92rem;opacity:.8;margin-bottom:1.3rem}
+.iform .frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+@media(max-width:700px){.iform .frow{grid-template-columns:1fr}}
+.iform label{display:block;font-size:.82rem;letter-spacing:.04em;margin-bottom:.35rem}
+.iform input,.iform textarea{width:100%;padding:.85em 1em;border:1px solid rgba(0,0,0,.15);border-radius:10px;background:#fff;font:inherit;color:inherit}
+.iform textarea{min-height:130px;resize:vertical}
+.iform input:focus,.iform textarea:focus{outline:2px solid var(--bronze,#b08d57);outline-offset:1px}
 </style>
 </head>
 <body>
@@ -439,8 +475,8 @@ footer .bottom a:hover{text-decoration:underline}
   <div class="wrap">
     <div>
       <span class="eyebrow h-eyebrow"><span class="l-el">Ψυχολόγος MSc, PhDc · Ψυχοθεραπεύτρια CBT · Κέρκυρα</span><span class="l-en">Psychologist MSc, PhDc · CBT Psychotherapist · Corfu</span></span>
-      <h1 class="l-el"><span class="line"><span>Το ταξίδι προς</span></span><span class="line"><span>τον <em>εαυτό σας</em></span></span><span class="line"><span>ξεκινά εδώ.</span></span></h1>
-      <h1 class="l-en"><span class="line"><span>The journey back</span></span><span class="line"><span>to <em>yourself</em></span></span><span class="line"><span>begins here.</span></span></h1>
+      <h1 class="l-el"><span class="line"><span>Η αλλαγή ξεκινά</span></span><span class="line"><span>από <em>μέσα μας</em> —</span></span><span class="line"><span>από τον τρόπο που σκεφτόμαστε,</span></span><span class="line"><span>νιώθουμε και επιλέγουμε να ζούμε.</span></span></h1>
+      <h1 class="l-en"><span class="line"><span>Change begins</span></span><span class="line"><span><em>within us</em> —</span></span><span class="line"><span>in the way we think,</span></span><span class="line"><span>feel and choose to live.</span></span></h1>
       <p class="lead l-el">Η ψυχοθεραπεία δεν είναι προορισμός — είναι διαδρομή. Με επιστημονικά τεκμηριωμένη Γνωσιακή-Συμπεριφοριστική Θεραπεία και μια σχέση εμπιστοσύνης, σας συνοδεύω σε κάθε βήμα, με τον δικό σας ρυθμό.</p>
       <p class="lead l-en">Psychotherapy is not a destination — it is a journey. Through evidence-based Cognitive Behavioural Therapy and a relationship built on trust, I walk beside you at every step, at your own pace.</p>
       <div class="h-actions">
@@ -449,39 +485,8 @@ footer .bottom a:hover{text-decoration:underline}
         <a class="cta ghost l-el" href="#viografiko">Γνωρίστε με</a>
         <a class="cta ghost l-en" href="#viografiko">Get to know me</a>
       </div>
-      <div class="h-meta">
-        <div><b class="l-el">Πιστοποίηση EABCT</b><b class="l-en">EABCT Certified</b><span class="l-el">Ευρωπαϊκά πρότυπα εκπαίδευσης</span><span class="l-en">European training standards</span></div>
-        <div><b class="l-el">Αιγινήτειο Νοσοκομείο</b><b class="l-en">Eginition Hospital</b><span class="l-el">Συνεργασία από το 2016</span><span class="l-en">Collaboration since 2016</span></div>
-        <div><b class="l-el">Δια ζώσης & Online</b><b class="l-en">In person & Online</b><span class="l-el">Συνεδρίες 50 λεπτών</span><span class="l-en">50-minute sessions</span></div>
-      </div>
     </div>
-    <div class="h-fly" aria-hidden="true">
-      <svg viewBox="0 0 440 360">
-        <g class="fly-face">
-          <path class="draw" style="--len:260" d="M210 84 C198 104,200 124,209 136 C199 146,199 158,208 166 C200 176,202 192,209 204 C202 222,204 246,213 266"/>
-          <path class="draw" style="--len:260;animation-delay:.15s" d="M230 84 C242 104,240 124,231 136 C241 146,241 158,232 166 C240 176,238 192,231 204 C238 222,236 246,227 266"/>
-          <path class="draw" style="--len:120;animation-delay:.3s" d="M212 82 C204 66,192 54,178 46"/>
-          <path class="draw" style="--len:120;animation-delay:.3s" d="M228 82 C236 66,248 54,262 46"/>
-        </g>
-        <g class="fly-line">
-          <polyline class="draw" style="--len:520;animation-delay:.45s" points="202,102 148,70 84,58 38,116 56,180 114,170 202,158"/>
-          <polyline class="draw" style="--len:160;animation-delay:1s" points="148,70 150,128 114,170"/>
-          <polyline class="draw" style="--len:80;animation-delay:1.2s" points="150,128 202,140"/>
-          <polyline class="draw" style="--len:430;animation-delay:.7s" points="204,182 178,246 168,300 112,292 70,234 114,170"/>
-          <polyline class="draw" style="--len:60;animation-delay:1.35s" points="178,246 210,240"/>
-          <polyline class="draw" style="--len:520;animation-delay:.45s" points="238,102 292,70 356,58 402,116 384,180 326,170 238,158"/>
-          <polyline class="draw" style="--len:160;animation-delay:1s" points="292,70 290,128 326,170"/>
-          <polyline class="draw" style="--len:80;animation-delay:1.2s" points="290,128 238,140"/>
-          <polyline class="draw" style="--len:430;animation-delay:.7s" points="236,182 262,246 272,300 328,292 370,234 326,170"/>
-          <polyline class="draw" style="--len:60;animation-delay:1.35s" points="262,246 230,240"/>
-        </g>
-        <g>
-          <circle class="fly-dot big" style="animation-delay:.6s" cx="148" cy="70" r="5"/><circle class="fly-dot" style="animation-delay:.75s" cx="84" cy="58" r="4.2"/><circle class="fly-dot big" style="animation-delay:.9s" cx="38" cy="116" r="5"/><circle class="fly-dot" style="animation-delay:1.05s" cx="56" cy="180" r="4.2"/><circle class="fly-dot big" style="animation-delay:1.2s" cx="114" cy="170" r="5"/><circle class="fly-dot" style="animation-delay:1.35s" cx="150" cy="128" r="4.2"/><circle class="fly-dot big" style="animation-delay:1.5s" cx="178" cy="246" r="5"/><circle class="fly-dot" style="animation-delay:1.62s" cx="168" cy="300" r="4.2"/><circle class="fly-dot" style="animation-delay:1.74s" cx="112" cy="292" r="4.2"/><circle class="fly-dot big" style="animation-delay:1.86s" cx="70" cy="234" r="5"/>
-          <circle class="fly-dot big" style="animation-delay:.6s" cx="292" cy="70" r="5"/><circle class="fly-dot" style="animation-delay:.75s" cx="356" cy="58" r="4.2"/><circle class="fly-dot big" style="animation-delay:.9s" cx="402" cy="116" r="5"/><circle class="fly-dot" style="animation-delay:1.05s" cx="384" cy="180" r="4.2"/><circle class="fly-dot big" style="animation-delay:1.2s" cx="326" cy="170" r="5"/><circle class="fly-dot" style="animation-delay:1.35s" cx="290" cy="128" r="4.2"/><circle class="fly-dot big" style="animation-delay:1.5s" cx="262" cy="246" r="5"/><circle class="fly-dot" style="animation-delay:1.62s" cx="272" cy="300" r="4.2"/><circle class="fly-dot" style="animation-delay:1.74s" cx="328" cy="292" r="4.2"/><circle class="fly-dot big" style="animation-delay:1.86s" cx="370" cy="234" r="5"/>
-          <circle class="fly-dot" style="animation-delay:2s" cx="178" cy="46" r="3.6"/><circle class="fly-dot" style="animation-delay:2s" cx="262" cy="46" r="3.6"/>
-        </g>
-      </svg>
-    </div>
+    
   </div>
   <div class="h-scroll"><span class="l-el">Κύλιση</span><span class="l-en">Scroll</span></div>
 </section>
@@ -504,8 +509,8 @@ footer .bottom a:hover{text-decoration:underline}
       </div>
       <div class="bio">
         <span class="eyebrow rv"><span class="l-el">Βιογραφικό</span><span class="l-en">About me</span></span>
-        <h2 class="sec-title rv l-el">Επιστημονική γνώση, με <em>ανθρώπινο</em> πρόσωπο</h2>
-        <h2 class="sec-title rv l-en">Scientific knowledge, with a <em>human</em> face</h2>
+        <h2 class="sec-title rv l-el">Με επιστημονική προσέγγιση και σεβασμό στη <em>μοναδικότητα</em> κάθε ανθρώπου</h2>
+        <h2 class="sec-title rv l-en">A scientific approach, with respect for each person’s <em>uniqueness</em></h2>
         <div class="l-el">
           <p class="rv">Είμαι Ψυχολόγος (MSc, PhDc) και πιστοποιημένη Ψυχοθεραπεύτρια Γνωσιακής-Συμπεριφοριστικής Ψυχοθεραπείας, σύμφωνα με τα κριτήρια της European Association for Behavioural and Cognitive Therapies (EABCT).</p>
           <p class="rv d1">Ολοκλήρωσα τις σπουδές μου στο Τμήμα Ψυχολογίας του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης, με κατεύθυνση Κλινικής-Κοινωνικής Ψυχολογίας και βαθμό «Άριστα». Είμαι κάτοχος μεταπτυχιακού τίτλου MSc «Προαγωγή Ψυχικής Υγείας – Πρόληψη Ψυχιατρικών Διαταραχών» με βαθμό «Άριστα» από την Ιατρική Σχολή του ΕΚΠΑ και υποψήφια διδάκτωρ του ίδιου πανεπιστημίου. Διαθέτω πιστοποιημένη τετραετή εκπαίδευση στη Γνωσιακή-Συμπεριφορική Θεραπεία (CBT) από την Εταιρεία Γνωσιακών Συμπεριφοριστικών Σπουδών (ΕΕΕΣ).</p>
@@ -521,9 +526,101 @@ footer .bottom a:hover{text-decoration:underline}
         <div class="creds">
           <div class="cred rv d1"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M6 10.5V15c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/></svg><b class="l-el">ΑΠΘ · Πτυχίο Ψυχολογίας</b><b class="l-en">AUTh · BSc Psychology</b><span class="l-el">Κλινική-Κοινωνική κατεύθυνση, «Άριστα»</span><span class="l-en">Clinical-Social track, with distinction</span></div>
           <div class="cred rv d2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5 7 21l5-2.6L17 21l-1.5-7.5"/></svg><b class="l-el">ΕΚΠΑ · MSc & PhDc</b><b class="l-en">NKUA · MSc & PhDc</b><span class="l-el">Προαγωγή Ψυχικής Υγείας, Ιατρική Σχολή, «Άριστα»</span><span class="l-en">Mental Health Promotion, Medical School, distinction</span></div>
-          <div class="cred rv d3"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16v13H4z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/><path d="m8.5 13 2.3 2.3L15.5 11"/></svg><b class="l-el">Πιστοποίηση EABCT</b><b class="l-en">EABCT Certification</b><span class="l-el">Τετραετής εκπαίδευση CBT · ΕΕΕΣ</span><span class="l-en">Four-year CBT training · HSBCS</span></div>
+          <div class="cred rv d3"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16v13H4z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/><path d="m8.5 13 2.3 2.3L15.5 11"/></svg><b class="l-el">Πιστοποίηση EABCT</b><b class="l-en">EABCT Certification</b><span class="l-el">Ευρωπαϊκή πιστοποίηση ως Γνωσιακή-Συμπεριφοριστική Ψυχοθεραπεύτρια</span><span class="l-en">European certification as a Cognitive-Behavioural Psychotherapist</span></div>
           <div class="cred rv d4"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg><b class="l-el">Αιγινήτειο Νοσοκομείο</b><b class="l-en">Eginition Hospital</b><span class="l-el">Ιατρείο Αγχωδών Διαταραχών, από το 2016</span><span class="l-en">Anxiety Disorders Clinic, since 2016</span></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCIENCE / PUBLICATIONS ================= -->
+<section class="science pad">
+  <div class="wrap">
+    <span class="eyebrow rv"><span class="l-el">Επιστημονική Δραστηριότητα</span><span class="l-en">Scientific Work</span></span>
+    <h2 class="sec-title rv l-el">Έρευνα, συγγραφή & <em>συνεχής</em> εκπαίδευση</h2>
+    <h2 class="sec-title rv l-en">Research, writing & <em>continuous</em> training</h2>
+    <p class="lead rv d1 l-el">Η επιστημονική μου δραστηριότητα περιλαμβάνει δημοσιεύσεις σε διεθνή περιοδικά, συγγραφή και μετάφραση επιστημονικών βιβλίων, καθώς και εισηγήσεις σε συνέδρια και σεμινάρια για ειδικούς ψυχικής υγείας.</p>
+    <p class="lead rv d1 l-en">My scientific work includes publications in international journals, authoring and translating academic books, and presenting at conferences and seminars for mental health professionals.</p>
+    <div class="sci-tabs rv d2">
+      <button class="on" data-tab="pubs"><span class="l-el">Δημοσιεύσεις</span><span class="l-en">Publications</span></button>
+      <button data-tab="pres"><span class="l-el">Ανακοινώσεις & Παρουσιάσεις</span><span class="l-en">Presentations</span></button>
+      <button data-tab="books"><span class="l-el">Βιβλία</span><span class="l-en">Books</span></button>
+    </div>
+    <div class="sci-panel on" id="pubs">
+      <div class="pub rv"><p class="l-el"><b>Vasileiou E., Fexi P., Spyropoulou A., Mourikis I., Chalimourdas T., Zervas I.</b> (2022). Obsessive-compulsive symptoms in pregnancy: their relationship with obsessive beliefs and obsessive-compulsive personality traits.</p><p class="l-en"><b>Vasileiou E., Fexi P., Spyropoulou A., Mourikis I., Chalimourdas T., Zervas I.</b> (2022). Obsessive-compulsive symptoms in pregnancy: their relationship with obsessive beliefs and obsessive-compulsive personality traits.</p><span class="where">Psychiatriki, 33, 39–48</span></div>
+      <div class="pub rv d1"><p class="l-el"><b>Βασιλείου Α., Αργυροπούλου Μ.</b> (2021). Αποτελεσματικότητα της γνωσιακής-συμπεριφοριστικής θεραπείας στη διαταραχή διαδικτυακών παιχνιδιών: ανασκόπηση βιβλιογραφίας.</p><p class="l-en"><b>Vasileiou A., Argyropoulou M.</b> (2021). Effectiveness of cognitive-behavioural therapy in internet gaming disorder: a literature review.</p><span class="where">Γνωσιακή–Συμπεριφοριστική Έρευνα & Θεραπεία, 7, 47–56</span></div>
+      <div class="pub rv d2"><p class="l-el"><b>Βασιλείου Α., Αργυροπούλου Μ.</b> (2021). Γνωσιακή Θεραπεία βασισμένη στην ενσυνειδητότητα (MBCT): παρουσίαση ομαδικού προγράμματος για την αντιμετώπιση της ιδεοψυχαναγκαστικής διαταραχής.</p><p class="l-en"><b>Vasileiou A., Argyropoulou M.</b> (2021). Mindfulness-based cognitive therapy (MBCT): presentation of a group programme for obsessive-compulsive disorder.</p><span class="where">Γνωσιακή–Συμπεριφοριστική Έρευνα & Θεραπεία, 2, 23–32</span></div>
+    </div>
+    <div class="sci-panel" id="pres">
+      <div class="pub rv"><p class="l-el"><b>Βασιλείου Α., Χαρίλα Ν.</b> «Μελέτη ατομικής περίπτωσης με αποφευκτική διαταραχή προσωπικότητας».</p><p class="l-en"><b>Vasileiou A., Charila N.</b> Individual case study on avoidant personality disorder.</p><span class="where">7ο Πανελλήνιο Συνέδριο Γνωσιακών Ψυχοθεραπειών · Ηράκλειο 2022</span></div>
+      <div class="pub rv d1"><p class="l-el"><b>Βασιλείου Α., Σκαλή Θ.</b> «Παιδί Σχολικής Ηλικίας και Οικογένεια στον καιρό της πανδημίας».</p><p class="l-en"><b>Vasileiou A., Skali T.</b> School-age children and the family in the time of the pandemic.</p><span class="where">9ο Δημοτικό Σχολείο Αθηνών · 2021</span></div>
+      <div class="pub rv d2"><p class="l-el"><b>Βασιλείου Α., Αργυροπούλου Μ.</b> «Αποτελεσματικότητα της Γνωσιακής-Συμπεριφοριστικής Θεραπείας στη Διαταραχή Διαδικτυακών Παιχνιδιών».</p><p class="l-en"><b>Vasileiou A., Argyropoulou M.</b> Effectiveness of CBT in internet gaming disorder.</p><span class="where">Διημερίδα Εταιρείας Γνωσιακών Συμπεριφοριστικών Σπουδών · Αθήνα 2021</span></div>
+      <div class="pub rv d3"><p class="l-el"><b>Βασιλείου Α. κ.ά.</b> Δύο επιστημονικές ανακοινώσεις (e-posters) για την ιδεοψυχαναγκαστική διαταραχή και τις δυσλειτουργικές πεποιθήσεις στην περιγεννητική περίοδο.</p><p class="l-en"><b>Vasileiou A. et al.</b> Two scientific e-poster presentations on OCD and dysfunctional beliefs in the perinatal period.</p><span class="where">27ο Πανελλήνιο Συνέδριο Ψυχιατρικής · Ηράκλειο 2019</span></div>
+    </div>
+    <div class="sci-panel" id="books">
+      <div class="pub rv" style="display:flex;gap:1.4rem;align-items:flex-start;flex-wrap:wrap">
+        <img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/refs/heads/main/book-abramowitz.jpg" alt="Εξώφυλλο βιβλίου: Αντιμετωπίζοντας την ΙΨΔ" loading="lazy" style="width:120px;border-radius:8px;box-shadow:0 10px 24px -12px rgba(0,0,0,.35)" onerror="this.style.display='none'">
+        <div style="flex:1;min-width:240px"><p class="l-el"><b>Abramowitz, J.</b> (2023). <i>Αντιμετωπίζοντας την ΙΨΔ: Ένας οδηγός αυτοβοήθειας 10 βημάτων.</i> Μετάφραση: Βασιλείου Α., Όουενς Δ. — Επιμ.: Χαλιμούρδας Θ., Χαρίλα Ν.</p><p class="l-en"><b>Abramowitz, J.</b> (2023). <i>Getting Over OCD: A 10-Step Workbook for Taking Back Your Life</i> (Greek edition). Translation: Vasileiou A., Owens D.</p><span class="where">Εκδόσεις Βήτα · Αθήνα</span></div></div>
+      <div class="pub rv d1"><p class="l-el">Στο πλαίσιο της συνεχούς επιμόρφωσης, παρακολουθώ πολυάριθμα συνέδρια, εκπαιδευτικά προγράμματα και σεμινάρια για τις τρέχουσες επιστημονικές εξελίξεις και την εφαρμογή τους στην ψυχοθεραπεία.</p><p class="l-en">As part of continuous professional development, I attend numerous conferences, training programmes and seminars on current scientific developments and their application in psychotherapy.</p><span class="where l-el">Διαρκής επαγγελματική εξέλιξη</span><span class="where l-en">Ongoing professional development</span></div>
+      <div class="rv d2" style="margin-top: 1.4rem;">
+        <img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/refs/heads/main/bookimag.png" alt="Book Image" loading="lazy" style="max-width: 150px; height: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 10px 24px -12px rgba(0,0,0,.35);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ΘΕΡΑΠΕΥΤΙΚΗ ΠΡΟΣΕΓΓΙΣΗ (CBT) ================= -->
+<section class="approach pad" id="prosengisi">
+  <div class="wrap">
+    <span class="eyebrow rv"><span class="l-el">Θεραπευτική Προσέγγιση</span><span class="l-en">Therapeutic Approach</span></span>
+    <h2 class="sec-title rv l-el">Γνωσιακή-Συμπεριφοριστική <em>Ψυχοθεραπεία</em></h2>
+    <h2 class="sec-title rv l-en">Cognitive-Behavioural <em>Psychotherapy</em></h2>
+    <blockquote class="epiq rv d1">
+      <span class="l-el">«Δεν είναι τα πράγματα που ταράζουν τους ανθρώπους, αλλά οι ερμηνείες τους για τα πράγματα.»</span>
+      <span class="l-en">“People are not disturbed by things, but by the views they take of them.”</span>
+      <cite>— Επίκτητος · Epictetus</cite>
+    </blockquote>
+    <div class="txtcol">
+      <div class="l-el">
+        <p class="rv">Η Γνωσιακή Συμπεριφοριστική Θεραπεία (ΓΣΘ) — Cognitive Behavioral Therapy (CBT) — είναι μια επιστημονικά τεκμηριωμένη ψυχοθεραπευτική προσέγγιση, με αποδεδειγμένη αποτελεσματικότητα σε ένα ευρύ φάσμα ψυχικών διαταραχών. Αναπτύχθηκε από τον ψυχίατρο Aaron T. Beck τη δεκαετία του ’60 και από τότε εξελίσσεται διαρκώς, ενσωματώνοντας τα νεότερα ερευνητικά δεδομένα.</p>
+        <h3 class="sub rv">Η «γνωσιακή» διάσταση</h3>
+        <p class="rv">Ο όρος «γνωσιακή» αναφέρεται στις σκέψεις, στις αντιλήψεις και στις πεποιθήσεις που έχουμε για τον εαυτό μας, τους άλλους και τον κόσμο. Η γνωσιακή πλευρά της θεραπείας μάς βοηθάει να αναγνωρίσουμε και να αναδομήσουμε τις δυσλειτουργικές σκέψεις, εκπαιδεύοντάς μας στην αντικατάστασή τους με άλλες πιο ρεαλιστικές. Το γνωστικό μοντέλο προτείνει ότι ο δυσλειτουργικός τρόπος σκέψης που επηρεάζει τη διάθεση και τη συμπεριφορά του θεραπευόμενου είναι κοινό στοιχείο σε όλες τις ψυχολογικές διαταραχές.</p>
+        <h3 class="sub rv">Η «συμπεριφοριστική» διάσταση</h3>
+        <p class="rv">Ο όρος «συμπεριφοριστική» αναφέρεται στην κατανόηση και τροποποίηση συμπεριφορών που είναι προϊόν μάθησης και συντηρούνται με την πάροδο των χρόνων. Η αλλαγή δεν επιτυγχάνεται μόνο μέσα από τη συζήτηση αλλά και από στοχευμένες ασκήσεις και πειράματα συμπεριφοράς, όπου ο θεραπευόμενος μαθαίνει νέους τρόπους δράσης που εξυπηρετούν καλύτερα τις ανάγκες και τους στόχους του.</p>
+        <h3 class="sub rv">Η φιλοσοφία της Γνωσιακής Συμπεριφοριστικής Θεραπείας (ΓΣΘ)</h3>
+        <p class="rv">Η Γνωσιακή Συμπεριφοριστική Θεραπεία (ΓΣΘ) βασίζεται στην αρχή ότι οι σκέψεις, τα συναισθήματα και οι συμπεριφορές μας είναι άρρηκτα συνδεδεμένα. Δεν είναι τα γεγονότα από μόνα τους που καθορίζουν το πώς νιώθουμε, αλλά ο τρόπος που τα ερμηνεύουμε. Όταν αλλάζουμε τον τρόπο που σκεφτόμαστε, αλλάζει ο τρόπος που αισθανόμαστε και κατ’ επέκταση ο τρόπος που δρούμε. Δεν μπορούμε να ελέγξουμε πάντα τις καταστάσεις, αλλά μπορούμε να δουλέψουμε τον τρόπο που τις σκεφτόμαστε. Αυτό κάνει τη διαφορά.</p>
+        <h3 class="sub rv">Το εκκρεμές του Νεύτωνα και η Γνωσιακή Συμπεριφοριστική Ψυχοθεραπεία</h3>
+        <p class="rv">Το εκκρεμές του Νεύτωνα, αυτές οι μεταλλικές μπάλες που αιωρούνται στη σειρά, είναι κάτι παραπάνω από εντυπωσιακή φυσική. Είναι μια ζωντανή μεταφορά για τον ψυχικό μας κόσμο. Όταν σηκώσεις τη μία άκρη, κινείται η άλλη. Οι ενδιάμεσες μπάλες μοιάζουν σχεδόν ακίνητες, όμως χωρίς αυτές η κίνηση δεν θα μεταφερόταν ποτέ. Από το «χτύπημα» της πρώτης μπάλας μέχρι την ταλάντωση της τελευταίας, όλα είναι συνδεδεμένα. Κι όμως, αυτό γίνεται τόσο γρήγορα που σπάνια το συνειδητοποιούμε.</p>
+        <p class="rv">Κάπως έτσι λειτουργεί και ο εσωτερικός μας κόσμος. Μια σκέψη μπορεί να πυροδοτήσει ένα συναίσθημα, κι αυτό με τη σειρά του μια συμπεριφορά. Μερικές φορές βλέπουμε μόνο την αρχή και το τέλος, αγνοώντας όλα όσα μεσολαβούν.</p>
+        <p class="rv">Η Γνωσιακή Συμπεριφοριστική Θεραπεία (ΓΣΘ) καλεί να παρατηρήσουμε αυτές τις «ενδιάμεσες μπάλες». Να δούμε πιο καθαρά:</p>
+        <ul class="rv"><li>τι σκέφτηκα,</li><li>πώς ένιωσα,</li><li>πώς αντέδρασα.</li></ul>
+        <p class="rv">Και κυρίως, να μάθουμε πώς μπορούμε να αλλάξουμε την πορεία της κίνησης. Γιατί, όπως στο εκκρεμές, έτσι και στη ζωή, μια μικρή αλλαγή αρκεί για να επηρεάσει ολόκληρο το σύστημα. Μια πιο ρεαλιστική σκέψη μπορεί να φέρει ένα πιο ήπιο συναίσθημα· αυτό, με τη σειρά του, μια πιο λειτουργική συμπεριφορά. Έτσι, η αλυσιδωτή αντίδραση δεν οδηγεί πια σε δυσφορία, αλλά σε ισορροπία.</p>
+        <h3 class="sub rv">Πρακτική εφαρμογή</h3>
+        <p class="rv">Στη Γνωσιακή Συμπεριφοριστική Θεραπεία, θεραπευτής και θεραπευόμενος συνεργάζονται ισότιμα, θέτοντας σαφείς και ρεαλιστικούς στόχους, ενώ η πρόοδος παρακολουθείται συστηματικά. Μέσα από την ψυχοθεραπευτική διαδικασία ο θεραπευόμενος κατανοεί σε βάθος τους λόγους πίσω από όσα τον δυσκολεύουν και αναγνωρίζει πώς αυτά πυροδοτούνται από τις εκάστοτε συνθήκες.</p>
+        <p class="rv">Όλα αυτά επιτυγχάνονται μέσω στοχευμένων τεχνικών που προσαρμόζονται στο αίτημα του εκάστοτε θεραπευόμενου, έχοντας ως αποτέλεσμα όχι μόνο την αποδρομή των συμπτωμάτων, αλλά και την ενίσχυση δεξιοτήτων για μια καλύτερη ποιότητα ζωής. Η Γνωσιακή Συμπεριφοριστική Θεραπεία δεν περιορίζεται μόνο στην ανακούφιση της δυσφορίας, αλλά απώτερος σκοπός της είναι ο θεραπευόμενος να αποκτήσει δεξιότητες και εργαλεία αυτοβοήθειας ώστε να γίνει σταδιακά ο ίδιος «θεραπευτής» του εαυτού του, διατηρώντας και ενισχύοντας τα οφέλη μακροπρόθεσμα.</p>
+        <h3 class="sub rv">Γιατί να επιλέξω τη συγκεκριμένη ψυχοθεραπευτική προσέγγιση;</h3>
+        <p class="rv">Η Γνωστική Συμπεριφορική Ψυχοθεραπεία είναι σχετικά βραχύχρονη προσέγγιση που εστιάζει στο «εδώ-και-τώρα». Πρόκειται για την περισσότερο επιστημονικά τεκμηριωμένη μορφή θεραπείας μέσω του λόγου. Θεωρείται διεθνώς θεραπεία εκλογής για πολλές ψυχικές διαταραχές. Σε αρκετές περιπτώσεις, τα αποτελέσματά της είναι συγκρίσιμα με εκείνα της φαρμακοθεραπείας, με το σημαντικό πλεονέκτημα ότι εφοδιάζει το άτομο με δεξιότητες και τεχνικές που μπορεί να χρησιμοποιήσει μακροπρόθεσμα, ακόμη και μετά την ολοκλήρωση της θεραπείας.</p>
+      </div>
+      <div class="l-en">
+        <p class="rv">Cognitive Behavioural Therapy (CBT) is a scientifically grounded psychotherapeutic approach with proven effectiveness across a wide range of mental health difficulties. It was developed by the psychiatrist Aaron T. Beck in the 1960s and has been evolving ever since, incorporating the latest research findings.</p>
+        <h3 class="sub rv">The “cognitive” dimension</h3>
+        <p class="rv">“Cognitive” refers to the thoughts, perceptions and beliefs we hold about ourselves, other people and the world. The cognitive side of therapy helps us recognise and restructure dysfunctional thoughts, training us to replace them with more realistic ones. The cognitive model proposes that a dysfunctional way of thinking — one that affects a person’s mood and behaviour — is common to all psychological disorders.</p>
+        <h3 class="sub rv">The “behavioural” dimension</h3>
+        <p class="rv">“Behavioural” refers to understanding and modifying behaviours that are learned and maintained over the years. Change is achieved not only through conversation but also through targeted exercises and behavioural experiments, in which the client learns new ways of acting that better serve their needs and goals.</p>
+        <h3 class="sub rv">The philosophy of CBT</h3>
+        <p class="rv">CBT rests on the principle that our thoughts, emotions and behaviours are inseparably connected. It is not events by themselves that determine how we feel, but the way we interpret them. When we change how we think, how we feel changes — and, in turn, how we act. We cannot always control our circumstances, but we can work on the way we think about them. That is what makes the difference.</p>
+        <h3 class="sub rv">Newton’s cradle and CBT</h3>
+        <p class="rv">Newton’s cradle — those metal spheres suspended in a row — is more than an impressive physics demonstration. It is a living metaphor for our inner world. Lift one end and the other moves. The spheres in between appear almost still, yet without them the motion would never be transmitted. From the strike of the first sphere to the swing of the last, everything is connected — and it happens so fast that we rarely notice it.</p>
+        <p class="rv">Our inner world works in much the same way. A thought can trigger an emotion, which in turn triggers a behaviour. Sometimes we only see the beginning and the end, unaware of everything in between.</p>
+        <p class="rv">CBT invites us to observe those “middle spheres” — to see more clearly:</p>
+        <ul class="rv"><li>what I thought,</li><li>how I felt,</li><li>how I reacted.</li></ul>
+        <p class="rv">And, above all, to learn how we can change the course of the motion. Just as in the cradle, in life a small change is enough to affect the whole system. A more realistic thought can bring a milder emotion; that, in turn, a more functional behaviour. The chain reaction no longer leads to distress, but to balance.</p>
+        <h3 class="sub rv">In practice</h3>
+        <p class="rv">In CBT, therapist and client work together as equals, setting clear and realistic goals while progress is monitored systematically. Through the therapeutic process, the client comes to understand in depth the reasons behind their difficulties and to recognise how these are triggered by particular circumstances.</p>
+        <p class="rv">All this is achieved through targeted techniques tailored to each client’s needs, resulting not only in the remission of symptoms but also in stronger skills for a better quality of life. CBT is not limited to relieving distress; its ultimate aim is for clients to acquire self-help skills and tools so that they gradually become their own “therapist”, maintaining and building on the benefits in the long term.</p>
+        <h3 class="sub rv">Why choose this approach?</h3>
+        <p class="rv">CBT is a relatively short-term approach focused on the “here and now”. It is the most scientifically supported form of talking therapy and is internationally considered the treatment of choice for many mental health conditions. In several cases its results are comparable to those of medication — with the significant advantage that it equips the person with skills and techniques they can keep using long after therapy ends.</p>
       </div>
     </div>
   </div>
@@ -580,29 +677,31 @@ footer .bottom a:hover{text-decoration:underline}
       <div class="sv rv d1">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
         <h3 class="l-el">Ατομική ψυχοθεραπεία ενηλίκων</h3><h3 class="l-en">Individual therapy for adults</h3>
-        <p class="l-el">Ένας χώρος αποκλειστικά δικός σας: για να κατανοήσετε τις σκέψεις και τα συναισθήματά σας, να επεξεργαστείτε όσα σας δυσκολεύουν και να αναπτύξετε πιο λειτουργικούς τρόπους αντιμετώπισης, με τεκμηριωμένες τεχνικές CBT.</p>
-        <p class="l-en">A space entirely your own: to understand your thoughts and feelings, work through what weighs on you and develop more effective ways of coping, using evidence-based CBT techniques.</p>
+        <p class="l-el">Κατά τη διάρκεια της ζωής μας όλοι ερχόμαστε αντιμέτωποι με προκλήσεις όπως άγχος, κατάθλιψη, θυμό, κρίσεις πανικού, ψυχοσωματικά συμπτώματα, δυσκολίες στις διαπροσωπικές σχέσεις, δύσκολες αποφάσεις, αλλαγές ή και συγκρούσεις με τον ίδιο μας τον εαυτό. Η ψυχοθεραπεία προσφέρει έναν ασφαλή χώρο, όπου θεραπευτής και θεραπευόμενος αναπτύσσουν μια συνεργατική θεραπευτική σχέση. Πρόκειται για μία ενεργητική διαδικασία, η οποία αποσκοπεί στην αντιμετώπιση των δυσκολιών του ατόμου σε κλίμα εμπιστοσύνης, κατανόησης και άνευ όρων αποδοχής.</p>
+        <p class="l-en">Throughout life we all face challenges such as anxiety, depression, anger, panic attacks, psychosomatic symptoms, difficulties in relationships, hard decisions, changes or conflicts with ourselves. Psychotherapy offers a safe space in which therapist and client build a collaborative therapeutic relationship — an active process aimed at addressing each person’s difficulties in a climate of trust, understanding and unconditional acceptance.</p>
         <div class="tagf l-el">Δια ζώσης · Online</div><div class="tagf l-en">In person · Online</div>
       </div>
       <div class="sv rv d2">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="9" r="3.4"/><circle cx="17" cy="11" r="2.6"/><path d="M2.5 20c0-3.2 2.9-5.2 6.5-5.2s6.5 2 6.5 5.2M14.6 15.6c2.9.2 5 1.8 5 4.4"/></svg>
         <h3 class="l-el">Ψυχοθεραπεία παιδιών & εφήβων</h3><h3 class="l-en">Therapy for children & adolescents</h3>
-        <p class="l-el">Με σεβασμό στην ηλικία και τη μοναδικότητα κάθε παιδιού, οι συνεδρίες βοηθούν τα παιδιά και τους εφήβους να εκφράσουν όσα τους απασχολούν, να διαχειριστούν το άγχος και τα συναισθήματά τους και να ενισχύσουν την αυτοεκτίμησή τους.</p>
-        <p class="l-en">With respect for each child’s age and uniqueness, sessions help children and adolescents express what troubles them, manage anxiety and emotions, and strengthen their self-esteem.</p>
+        <p class="l-el">Η ψυχοθεραπεία παιδιών και εφήβων προσφέρει έναν ασφαλή και υποστηρικτικό χώρο, όπου τα παιδιά και οι έφηβοι μπορούν να εκφραστούν ελεύθερα και να αναπτύξουν δεξιότητες για τη διαχείριση δυσκολιών όπως το άγχος, τη χαμηλή αυτοεκτίμηση, τις δυσκολίες στο σχολείο ή στις διαπροσωπικές σχέσεις.</p>
+        <p class="l-en">Child and adolescent psychotherapy offers a safe, supportive space where children and teenagers can express themselves freely and develop skills for managing difficulties such as anxiety, low self-esteem, and challenges at school or in relationships.</p>
         <div class="tagf l-el">Όλες οι βαθμίδες</div><div class="tagf l-en">All ages & stages</div>
       </div>
       <div class="sv rv d3">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7.5-4.6-9.5-9A5.4 5.4 0 0 1 12 6.5 5.4 5.4 0 0 1 21.5 12c-2 4.4-9.5 9-9.5 9z"/></svg>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21v-8"/><path d="M12 13c0-3.5-2.8-6-6.5-6C5.5 10.5 8.3 13 12 13z"/><path d="M12 11c0-3.2 2.6-5.5 6.5-5.5C18.5 9.4 15.9 11.8 12 11z"/><path d="M7 21h10"/></svg>
         <h3 class="l-el">Συμβουλευτική γονέων</h3><h3 class="l-en">Parent counselling</h3>
-        <p class="l-el">Η γονεϊκότητα είναι ένας απαιτητικός ρόλος χωρίς «οδηγίες χρήσης». Μαζί διερευνούμε τις δυσκολίες της καθημερινότητας, κατανοούμε τις ανάγκες του παιδιού και χτίζουμε πρακτικές που ενισχύουν τη σχέση γονέα-παιδιού.</p>
-        <p class="l-en">Parenting is a demanding role that comes without a manual. Together we explore everyday challenges, understand the child’s needs and build practices that strengthen the parent-child relationship.</p>
+        <p class="l-el">Γονέας δεν γεννιέσαι, αλλά γίνεσαι μέσα από την καθημερινή εμπειρία. Η συμβουλευτική γονέων μπορεί να πραγματοποιηθεί σε συνδυασμό με τη θεραπεία των παιδιών/εφήβων ή ανεξάρτητα. Μέσα από τη συμβουλευτική οι γονείς έχουν τη δυνατότητα να κατανοήσουν βαθύτερα τις ανάγκες του παιδιού, να ενδυναμωθούν ώστε να αισθάνονται πιο σίγουροι και αποτελεσματικοί στον γονεϊκό τους ρόλο και να αποκτήσουν πρακτικά εργαλεία για την αντιμετώπιση καθημερινών προκλήσεων. Μέσα από τη διαδικασία αυτή ενισχύονται η σύνδεση, η επικοινωνία και το κλίμα εμπιστοσύνης μεταξύ των μελών της οικογένειας.</p>
+        <p class="l-el" style="margin-top:.6rem">Ενδεικτικά θέματα όπου μπορεί να φανεί χρήσιμη: το άγχος του παιδιού/εφήβου, η χαμηλή αυτοπεποίθηση, τα προβλήματα συμπεριφοράς στο σπίτι και στο σχολείο, η εικόνα σώματος, η αδελφική ζήλεια, η απώλεια και η διαχείριση του διαζυγίου.</p>
+        <p class="l-en">No one is born a parent — we become parents through everyday experience. Parent counselling can take place alongside a child’s or adolescent’s therapy, or independently. Through counselling, parents can understand their child’s needs more deeply, feel more confident and effective in their parenting role, and gain practical tools for everyday challenges — strengthening connection, communication and trust within the family.</p>
+        <p class="l-en" style="margin-top:.6rem">It can help with issues such as a child’s or teenager’s anxiety, low self-confidence, behavioural problems at home or school, body image, sibling rivalry, loss, and coping with divorce.</p>
         <div class="tagf l-el">Υποστήριξη & καθοδήγηση</div><div class="tagf l-en">Support & guidance</div>
       </div>
       <div class="sv rv d4">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="5" width="14" height="11" rx="2"/><path d="m16.5 9 5-2.6v8.2l-5-2.6M6 19.5h7"/></svg>
         <h3 class="l-el">Εξ αποστάσεως συνεδρίες</h3><h3 class="l-en">Online sessions</h3>
-        <p class="l-el">Όπου κι αν βρίσκεστε, η ψυχοθεραπεία μπορεί να σας συνοδεύει. Οι διαδικτυακές συνεδρίες μέσω βιντεοκλήσης προσφέρουν την ίδια ποιότητα, συνέπεια και εμπιστευτικότητα με τις δια ζώσης — με ευελιξία για το δικό σας πρόγραμμα.</p>
-        <p class="l-en">Wherever you are, therapy can travel with you. Online video sessions offer the same quality, consistency and confidentiality as in-person meetings — with the flexibility to fit your schedule.</p>
+        <p class="l-el">Οι εξ αποστάσεως συνεδρίες προσφέρουν τη δυνατότητα ψυχοθεραπευτικής υποστήριξης από την άνεση του χώρου σας, μέσω ασφαλών διαδικτυακών πλατφορμών. Αποτελούν ιδανική επιλογή για άτομα που δεν έχουν τη δυνατότητα να παρευρεθούν με φυσική παρουσία, όπως κάτοικοι απομονωμένων περιοχών, ελληνόφωνοι που ζουν στο εξωτερικό ή περιπτώσεις όπου ο θεραπευόμενος αδυνατεί να εξέλθει από την οικία του. Σύμφωνα με τα ερευνητικά δεδομένα, οι συνεδρίες μέσω βιντεοκλήσης είναι εξίσου αποτελεσματικές με τις δια ζώσης και δεν υπολείπονται σε ποιότητα παροχής υπηρεσιών, ενώ τηρούνται πλήρως οι κανόνες προστασίας προσωπικών δεδομένων (GDPR). Το μόνο που χρειάζεται είναι ένας ήσυχος, ιδιωτικός χώρος και μια σταθερή σύνδεση στο διαδίκτυο.</p>
+        <p class="l-en">Online sessions offer psychotherapeutic support from the comfort of your own space, through secure online platforms. They are ideal for people who cannot attend in person — such as those living in remote areas, Greek speakers abroad, or anyone unable to leave home. Research shows that video sessions are just as effective as in-person therapy and equal in quality of care, while fully complying with data-protection rules (GDPR). All you need is a quiet, private space and a stable internet connection.</p>
         <div class="tagf l-el">Βιντεοκλήση</div><div class="tagf l-en">Video call</div>
       </div>
     </div>
@@ -622,16 +721,95 @@ footer .bottom a:hover{text-decoration:underline}
         <h2 class="sec-title rv l-en">What therapy can <em>help</em> with</h2>
         <p class="lead rv d1 l-el">Η Γνωσιακή-Συμπεριφοριστική Θεραπεία είναι μία από τις πλέον επιστημονικά τεκμηριωμένες προσεγγίσεις για ένα ευρύ φάσμα δυσκολιών.</p>
         <p class="lead rv d1 l-en">Cognitive Behavioural Therapy is one of the most scientifically supported approaches for a wide range of difficulties.</p>
-        <div class="ex-grid rv d2">
-          <div class="ex"><span class="n">i.</span><h3 class="l-el">Αγχώδεις διαταραχές & φοβίες</h3><h3 class="l-en">Anxiety disorders & phobias</h3><p class="l-el">Γενικευμένο άγχος, κρίσεις πανικού, κοινωνικό άγχος, ειδικές φοβίες.</p><p class="l-en">Generalised anxiety, panic attacks, social anxiety, specific phobias.</p></div>
-          <div class="ex"><span class="n">ii.</span><h3 class="l-el">Διαταραχές διάθεσης</h3><h3 class="l-en">Mood disorders</h3><p class="l-el">Κατάθλιψη, επίμονη θλίψη, απώλεια ενδιαφέροντος και ενέργειας.</p><p class="l-en">Depression, persistent sadness, loss of interest and energy.</p></div>
-          <div class="ex"><span class="n">iii.</span><h3 class="l-el">Ιδεοψυχαναγκαστική διαταραχή</h3><h3 class="l-en">Obsessive-compulsive disorder</h3><p class="l-el">Εμμονικές σκέψεις και καταναγκασμοί, με εξειδικευμένο κλινικό και ερευνητικό έργο στην ΙΨΔ.</p><p class="l-en">Obsessive thoughts and compulsions, with specialised clinical and research work in OCD.</p></div>
-          <div class="ex"><span class="n">iv.</span><h3 class="l-el">Διατροφή & εικόνα σώματος</h3><h3 class="l-en">Eating & body image</h3><p class="l-el">Διαταραχές πρόσληψης τροφής και αρνητική εικόνα σώματος.</p><p class="l-en">Eating disorders and negative body image.</p></div>
-          <div class="ex"><span class="n">v.</span><h3 class="l-el">Σχέσεις & εικόνα εαυτού</h3><h3 class="l-en">Relationships & self-image</h3><p class="l-el">Δυσκολίες στις διαπροσωπικές σχέσεις, χαμηλή αυτοεκτίμηση, αυστηρή αυτοκριτική.</p><p class="l-en">Interpersonal difficulties, low self-esteem, harsh self-criticism.</p></div>
-          <div class="ex"><span class="n">vi.</span><h3 class="l-el">Δύσκολα γεγονότα ζωής</h3><h3 class="l-en">Difficult life events</h3><p class="l-el">Απώλειες, μεταβάσεις και κρίσεις που ανατρέπουν την καθημερινότητα.</p><p class="l-en">Losses, transitions and crises that disrupt everyday life.</p></div>
-          <div class="ex"><span class="n">vii.</span><h3 class="l-el">Χρόνιες ασθένειες</h3><h3 class="l-en">Chronic illness</h3><p class="l-el">Συναισθηματική επιβάρυνση από χρόνια προβλήματα υγείας — για ασθενείς και φροντιστές.</p><p class="l-en">The emotional burden of chronic health conditions — for patients and carers alike.</p></div>
-          <div class="ex"><span class="n">viii.</span><h3 class="l-el">Διαταραχές προσωπικότητας</h3><h3 class="l-en">Personality disorders</h3><p class="l-el">Επίμονα μοτίβα σκέψης και συμπεριφοράς που δυσκολεύουν τη ζωή και τις σχέσεις.</p><p class="l-en">Persistent patterns of thought and behaviour that strain life and relationships.</p></div>
-        </div>
+        <div class="ex-grid rv d2" style="grid-template-columns:1fr;gap:1rem">
+          <details class="ex exd"><summary><span class="n">i.</span><h3 class="l-el">Αγχώδεις διαταραχές & φοβίες</h3><h3 class="l-en">Anxiety disorders & phobias</h3></summary><div class="exbody">
+<div class="l-el"><p>Το άγχος είναι μια φυσιολογική αντίδραση του οργανισμού σε απαιτητικές ή απρόβλεπτες καταστάσεις. Όταν όμως γίνεται υπερβολικό και παρατεταμένο, αρχίζει να επηρεάζει την καθημερινότητα και να υπονομεύει την ποιότητα ζωής.</p>
+<p>Μπορεί να εκδηλωθεί με διαφορετικές μορφές:</p>
+<ul><li>Κρίσεις πανικού, που εμφανίζονται ξαφνικά με έντονα σωματικά συμπτώματα</li><li>Αγοραφοβία, δηλαδή φόβος να βρεθεί κανείς σε μέρη από όπου θα είναι δύσκολο να διαφύγει αν χρειαστεί (όπως μέσα μαζικής μεταφοράς, πολυσύχναστα μέρη)</li><li>Κοινωνικό άγχος που σχετίζεται με την έκθεση και την αλληλεπίδραση με άλλους</li><li>Άγχος υγείας, δηλαδή υπερβολική ανησυχία για την υγεία</li><li>Γενικευμένο άγχος, μια αίσθηση συνεχούς ανησυχίας για διάφορους τομείς της ζωής που κατακλύζει το άτομο καθημερινά</li></ul>
+<p>Το άγχος συχνά συνοδεύεται από συμπτώματα όπως ταχυκαρδία, δύσπνοια, ζάλη, εφίδρωση ή τρέμουλο, που κάνουν την εμπειρία ακόμη πιο τρομακτική και διαιωνίζουν τον φαύλο κύκλο του άγχους.</p>
+<p>Η ψυχοθεραπεία προσφέρει έναν ασφαλή χώρο όπου το άτομο μπορεί:</p>
+<ul><li>να αναγνωρίσει τη ρίζα του άγχους,</li><li>να κατανοήσει τις σκέψεις και τις πεποιθήσεις που το τροφοδοτούν,</li><li>να μάθει νέους τρόπους διαχείρισης του άγχους,</li><li>να ανακτήσει την αυτοπεποίθηση και την αίσθηση ελέγχου στη ζωή του.</li></ul>
+<div class="exq">«Το μεγαλύτερο όπλο κατά του στρες είναι η ικανότητά μας να διαλέγουμε μία σκέψη αντί για μια άλλη.»<b>— William James</b></div></div>
+<div class="l-en"><p>Anxiety is a natural response to demanding or unpredictable situations. When it becomes excessive and prolonged, however, it starts to affect everyday life and undermine its quality.</p>
+<p>It can take different forms:</p>
+<ul><li>Panic attacks, appearing suddenly with intense physical symptoms</li><li>Agoraphobia — fear of being in places from which escape might be difficult (public transport, crowded spaces)</li><li>Social anxiety related to exposure and interaction with others</li><li>Health anxiety — excessive worry about one’s health</li><li>Generalised anxiety — a sense of constant worry about many areas of life that overwhelms the person daily</li></ul>
+<p>Anxiety is often accompanied by symptoms such as a racing heart, shortness of breath, dizziness, sweating or trembling, which make the experience even more frightening and perpetuate the vicious cycle of anxiety.</p>
+<p>Psychotherapy offers a safe space where a person can:</p>
+<ul><li>recognise the root of the anxiety,</li><li>understand the thoughts and beliefs that feed it,</li><li>learn new ways of managing it,</li><li>regain confidence and a sense of control over their life.</li></ul>
+<div class="exq">“The greatest weapon against stress is our ability to choose one thought over another.”<b>— William James</b></div></div>
+</div></details>
+          <details class="ex exd"><summary><span class="n">ii.</span><h3 class="l-el">Διαταραχές διάθεσης</h3><h3 class="l-en">Mood disorders</h3></summary><div class="exbody">
+<div class="l-el"><p>Η θλίψη είναι ένα φυσιολογικό συναίσθημα· όταν όμως συνοδεύεται από απώλεια ενδιαφέροντος, μειωμένη ενέργεια, αίσθημα κενού, δυσκολία συγκέντρωσης, διαταραχές ύπνου ή όρεξης, τότε δεν μιλάμε απλώς για «κακή διάθεση». Μπορεί να είναι εκδηλώσεις κατάθλιψης ή δυσθυμίας (πιο ήπια αλλά χρόνια μορφή κατάθλιψης) ή και διπολικής διαταραχής, σε περίπτωση που τα επεισόδια κατάθλιψης εναλλάσσονται με περιόδους αυξημένης ενέργειας και ευφορίας (μανίας ή υπομανίας).</p>
+<p>Η ψυχοθεραπεία προσφέρει έναν χώρο κατανόησης και σταδιακής αλλαγής, με στόχο το άτομο να κατανοήσει καλύτερα τον εαυτό του, να ξαναβρεί την ελπίδα και να επανασυνδεθεί με όσα δίνουν νόημα στη ζωή του.</p></div>
+<div class="l-en"><p>Sadness is a normal emotion; but when it is accompanied by loss of interest, low energy, a sense of emptiness, difficulty concentrating, or disturbances in sleep or appetite, we are no longer talking simply about a “low mood”. These may be signs of depression or dysthymia (a milder but chronic form of depression), or of bipolar disorder, when depressive episodes alternate with periods of heightened energy and euphoria (mania or hypomania).</p>
+<p>Psychotherapy offers a space of understanding and gradual change, helping the person understand themselves better, rediscover hope and reconnect with what gives their life meaning.</p></div>
+</div></details>
+          <details class="ex exd"><summary><span class="n">iii.</span><h3 class="l-el">Ιδεοψυχαναγκαστική διαταραχή (ΙΨΔ)</h3><h3 class="l-en">Obsessive-compulsive disorder (OCD)</h3></summary><div class="exbody">
+<div class="l-el"><p>Η ιδεοψυχαναγκαστική διαταραχή χαρακτηρίζεται από επαναλαμβανόμενες, ανεπιθύμητες σκέψεις (ιδεοληψίες) και καταναγκαστικές συμπεριφορές (π.χ. συνεχής έλεγχος ηλεκτρικών συσκευών, πλύσιμο χεριών). Αν και οι καταναγκασμοί παρέχουν μια προσωρινή ανακούφιση, τελικά παγιδεύουν το άτομο και το άγχος συντηρείται. Όσο πιο πολύ προσπαθεί κανείς να ελέγξει τη σκέψη, τόσο πιο έντονη γίνεται.</p>
+<p>Η ψυχοθεραπεία βοηθά να «σπάσει» αυτός ο κύκλος. Με την κατάλληλη θεραπευτική υποστήριξη, οι καταναγκασμοί σταδιακά μειώνονται και το άτομο ανακτά τον έλεγχο της ζωής του.</p>
+<div class="exq">«Όλα ξεκινούν και τελειώνουν στο μυαλό σου. Σε αυτό που δίνεις δύναμη, αυτό αποκτά δύναμη πάνω σου, αν το επιτρέψεις.»<b>— Leon Brown</b></div>
+<div class="exq">«Οι σκέψεις είναι απλώς σκέψεις, όχι γεγονότα. Είναι σαν τα σύννεφα στον ουρανό, έρχονται και φεύγουν.»<b>— Άγνωστος</b></div></div>
+<div class="l-en"><p>Obsessive-compulsive disorder is characterised by repeated, unwanted thoughts (obsessions) and compulsive behaviours (such as constantly checking electrical appliances or washing one’s hands). Although compulsions bring temporary relief, they ultimately trap the person and maintain the anxiety. The harder one tries to control a thought, the stronger it becomes.</p>
+<p>Psychotherapy helps break this cycle. With appropriate therapeutic support, compulsions gradually decrease and the person regains control of their life.</p>
+<div class="exq">“Everything begins and ends in your mind. What you give power to has power over you, if you allow it.”<b>— Leon Brown</b></div>
+<div class="exq">“Thoughts are just thoughts, not facts. They are like clouds in the sky — they come and go.”<b>— Unknown</b></div></div>
+</div></details>
+          <details class="ex exd"><summary><span class="n">iv.</span><h3 class="l-el">Διαταραχές πρόσληψης τροφής & εικόνα σώματος</h3><h3 class="l-en">Eating disorders & body image</h3></summary><div class="exbody">
+<div class="l-el"><p>Οι διαταραχές πρόσληψης τροφής δεν έχουν να κάνουν απλώς με το φαγητό· είναι μια σύνθετη δυσκολία που συνδέεται με τα συναισθήματα, την αυτοεικόνα και τις σχέσεις.</p>
+<ul><li>Ψυχογενής ανορεξία: χαρακτηρίζεται από έντονο φόβο αύξησης βάρους και σημαντικό περιορισμό στη διατροφή, με αποτέλεσμα επικίνδυνη απώλεια κιλών.</li><li>Ψυχογενής βουλιμία: περιλαμβάνει επεισόδια υπερφαγίας που ακολουθούνται από αντισταθμιστικές συμπεριφορές, όπως εμετοί ή εξαντλητική άσκηση.</li><li>Επεισοδιακή υπερφαγία: συχνή κατανάλωση μεγάλων ποσοτήτων φαγητού, συνήθως συνοδευόμενη από ενοχή και ντροπή.</li></ul>
+<p>Η αρνητική εικόνα σώματος αποτελεί συχνά τον κοινό παρονομαστή. Η ψυχοθεραπεία ανοίγει τον δρόμο για την αναγνώριση των βαθύτερων αιτιών που τροφοδοτούν τη διαταραχή, όπως η ανάγκη ελέγχου, οι εσωτερικές συγκρούσεις ή οι κοινωνικές πιέσεις. Μέσα σε ένα ασφαλές πλαίσιο, το άτομο μαθαίνει να αποκαθιστά τη σχέση με τον εαυτό του, το σώμα του και το φαγητό, οικοδομώντας μια πιο υγιή και ισορροπημένη καθημερινότητα.</p>
+<div class="exq">«Πες μου τι τρως και θα σου πω ποιος είσαι.»<b>— Jean Anthelme Brillat-Savarin</b></div></div>
+<div class="l-en"><p>Eating disorders are not simply about food; they are a complex difficulty connected to emotions, self-image and relationships.</p>
+<ul><li>Anorexia nervosa: marked by an intense fear of weight gain and significant restriction of eating, leading to dangerous weight loss.</li><li>Bulimia nervosa: episodes of binge eating followed by compensatory behaviours such as vomiting or exhausting exercise.</li><li>Binge-eating disorder: frequent consumption of large amounts of food, usually accompanied by guilt and shame.</li></ul>
+<p>A negative body image is often the common denominator. Psychotherapy opens the way to recognising the deeper causes that feed the disorder — such as the need for control, inner conflicts or social pressures. Within a safe framework, the person learns to restore their relationship with themselves, their body and food, building a healthier, more balanced everyday life.</p>
+<div class="exq">“Tell me what you eat and I will tell you what you are.”<b>— Jean Anthelme Brillat-Savarin</b></div></div>
+</div></details>
+          <details class="ex exd"><summary><span class="n">v.</span><h3 class="l-el">Προβλήματα με τον εαυτό</h3><h3 class="l-en">Difficulties with the self</h3></summary><div class="exbody">
+<div class="l-el"><p>Η σχέση με τον εαυτό μας επηρεάζει όλες τις υπόλοιπες σχέσεις στη ζωή μας. Η χαμηλή αυτοεκτίμηση, η αναβλητικότητα, οι δυσκολίες στη διαχείριση των συναισθημάτων, οι εκρήξεις θυμού, η δυσκολία λήψης αποφάσεων, η έλλειψη διεκδικητικής συμπεριφοράς, οι δυσκολίες στην αυτονόμηση μπορεί να εμποδίζουν την προσωπική εξέλιξη, να οδηγήσουν σε στασιμότητα και σε αίσθηση αδιεξόδου. Η ψυχοθεραπεία βοηθά το άτομο να γνωρίσει καλύτερα τον εαυτό του, να αναπτύξει δεξιότητες αυτορρύθμισης και να σταθεί με περισσότερη αυτοπεποίθηση στις σχέσεις και τις επιλογές του.</p>
+<div class="exq">«Οι περισσότεροι άνθρωποι δεν ξέρουν τι μπορεί να κάνουν γιατί το μόνο που τους δίδαξαν είναι τι δεν μπορούν να κάνουν.»<b>— Zig Ziglar</b></div></div>
+<div class="l-en"><p>Our relationship with ourselves shapes every other relationship in our lives. Low self-esteem, procrastination, difficulty managing emotions, angry outbursts, indecision, lack of assertiveness and struggles with independence can hold back personal growth and lead to stagnation and a sense of impasse. Psychotherapy helps a person get to know themselves better, develop self-regulation skills and stand with more confidence in their relationships and choices.</p>
+<div class="exq">“Most people don’t know what they can do, because all they were ever taught is what they can’t do.”<b>— Zig Ziglar</b></div></div>
+</div></details>
+          <details class="ex exd"><summary><span class="n">vi.</span><h3 class="l-el">Προβλήματα σχέσεων</h3><h3 class="l-en">Relationship difficulties</h3></summary><div class="exbody">
+<div class="l-el"><p>Οι διαπροσωπικές σχέσεις είναι πηγή χαράς αλλά και πόνου. Όταν εμφανίζονται δυσκολίες στις σχέσεις μπορεί να προκαλέσουν έντονη συναισθηματική φόρτιση και αίσθημα μοναξιάς.</p>
+<p>Αυτές δυσκολίες μπορεί να εκδηλώνονται ως:</p>
+<ul><li>Συντροφικές δυσκολίες: συγκρούσεις, έλλειψη επικοινωνίας, απιστία, φόβος δέσμευσης, φόβος εγκατάλειψης.</li><li>Φιλικές σχέσεις: δυσκολία στη δημιουργία ή διατήρηση ουσιαστικών φιλικών σχέσεων, αίσθημα ότι «δεν χωράω» ή ότι «δεν με καταλαβαίνουν».</li><li>Προβλήματα επικοινωνίας: αδυναμία να εκφράσω τι νιώθω ή τι χρειάζομαι, φόβος σύγκρουσης.</li><li>Ανασφάλεια και έλλειψη εμπιστοσύνης: ζήλια, καχυποψία, αίσθηση ότι ο άλλος θα φύγει ή δεν θα είναι εκεί όταν τον χρειαστώ.</li></ul>
+<p>Η ψυχοθεραπεία προσφέρει έναν «καθρέφτη» για να δει το άτομο πώς σχετίζεται, να αναγνωρίσει επαναλαμβανόμενα μοτίβα και να μάθει να χτίζει πιο υγιείς, αυθεντικές, ουσιαστικές και σταθερές συνδέσεις. Συχνά, αυτά τα μοτίβα έχουν τις ρίζες τους στον τρόπο που μάθαμε να σχετιζόμαστε μέσα στην οικογένεια ή σε προηγούμενες εμπειρίες που άφησαν αποτύπωμα.</p>
+<div class="exq">«Ανάμεσα σε αυτό που σκέφτομαι, σε αυτό που θέλω να σας πω, σε αυτό που πιστεύω ότι σας λέω, σε αυτό που σας λέω, σε αυτό που θέλετε να ακούσετε, σε αυτό που ακούτε, σε αυτό που πιστεύετε ότι καταλαβαίνετε, σε αυτό που θέλετε να καταλάβετε και σε αυτό που καταλαβαίνετε, υπάρχουν εννιά τουλάχιστον πιθανότητες να μη συνεννοηθούμε, αλλά ας προσπαθήσουμε.»<b>— Bernard Werber</b></div>
+<div class="exq">«Δεν μπορείτε να ελέγξετε τη συμπεριφορά των άλλων, αλλά μπορείτε πάντα να επιλέξετε τον τρόπο με τον οποίο θα ανταποκριθείτε σε αυτή.»<b>— Roy Bennett</b></div></div>
+<div class="l-en"><p>Relationships are a source of joy — and of pain. When difficulties arise, they can bring intense emotional strain and a sense of loneliness.</p>
+<p>These difficulties may appear as:</p>
+<ul><li>Couple difficulties: conflict, lack of communication, infidelity, fear of commitment, fear of abandonment.</li><li>Friendships: difficulty forming or keeping meaningful friendships, a feeling of “not fitting in” or “not being understood”.</li><li>Communication problems: struggling to express what I feel or need, fear of conflict.</li><li>Insecurity and lack of trust: jealousy, suspicion, a sense that the other person will leave or won’t be there when I need them.</li></ul>
+<p>Psychotherapy offers a “mirror” in which to see how we relate, recognise repeating patterns and learn to build healthier, more authentic, meaningful and stable connections. These patterns often have their roots in how we learned to relate within our family, or in earlier experiences that left their mark.</p>
+<div class="exq">“Between what I think, what I want to say, what I believe I am saying, what I say, what you want to hear, what you hear, what you believe you understand, what you want to understand and what you understand — there are at least nine chances of not understanding each other. But let’s try anyway.”<b>— Bernard Werber</b></div>
+<div class="exq">“You can’t control other people’s behaviour, but you can always choose how you respond to it.”<b>— Roy Bennett</b></div></div>
+</div></details>
+          <details class="ex exd"><summary><span class="n">vii.</span><h3 class="l-el">Διαχείριση δύσκολων γεγονότων ζωής</h3><h3 class="l-en">Difficult life events</h3></summary><div class="exbody">
+<div class="l-el"><p>Οι απώλειες, οι χωρισμοί, το πένθος ή τα τραυματικά γεγονότα (όπως ατυχήματα, βία) μπορεί να προκαλέσουν έντονο ψυχικό πόνο, αίσθημα αποδιοργάνωσης και να αφήσουν βαθιά συναισθηματικά αποτυπώματα. Η ψυχοθεραπεία προσφέρει έναν ασφαλή χώρο για να εκφραστούν τα δύσκολα συναισθήματα, σταδιακά να επουλωθούν οι τραυματικές εμπειρίες και να ξαναχτίσει το άτομο μια αίσθηση εσωτερικής ισορροπίας και δύναμης.</p>
+<div class="exq">«Ίσως η πληγή να είναι πάντα μαζί σου. Ίσως να περπατάς πάντα με το τραύμα, αλλά τώρα το κρατάς, δεν σε κρατάει. Είσαι το δοχείο, όχι το περιεχόμενο.»<b>— Jeff Foster</b></div>
+<div class="exq">«Δεν μπορείς να πας πίσω και να αλλάξεις την αρχή. Μπορείς όμως να ξεκινήσεις από εκεί που είσαι και να αλλάξεις το τέλος.»<b>— C.S. Lewis</b></div>
+<div class="exq">«Η ψυχοθεραπεία δεν είναι το τέλος του πόνου, αλλά η αρχή μιας νέας σχέσης μαζί του.»<b>— Gabor Maté</b></div></div>
+<div class="l-en"><p>Losses, separations, grief or traumatic events (such as accidents or violence) can cause intense psychological pain and a sense of disorganisation, leaving deep emotional imprints. Psychotherapy offers a safe space in which difficult feelings can be expressed, traumatic experiences can gradually heal, and the person can rebuild a sense of inner balance and strength.</p>
+<div class="exq">“Perhaps the wound will always be with you. Perhaps you will always walk with the trauma — but now you hold it; it does not hold you. You are the container, not the content.”<b>— Jeff Foster</b></div>
+<div class="exq">“You can’t go back and change the beginning, but you can start where you are and change the ending.”<b>— C.S. Lewis</b></div>
+<div class="exq">“Psychotherapy is not the end of pain, but the beginning of a new relationship with it.”<b>— Gabor Maté</b></div></div>
+</div></details>
+          <details class="ex exd"><summary><span class="n">viii.</span><h3 class="l-el">Συναισθηματική επιβάρυνση από χρόνιες ασθένειες</h3><h3 class="l-en">Chronic illness</h3></summary><div class="exbody">
+<div class="l-el"><p>Μια χρόνια ασθένεια δεν επηρεάζει μόνο τη σωματική κατάσταση του ατόμου αλλά επιφέρει και συναισθηματική επιβάρυνση. Η διαχείριση της αβεβαιότητας, του πόνου ή των περιορισμών λόγω μιας χρόνιας ασθένειας μπορεί να είναι ιδιαίτερα απαιτητικά. Το άτομο και τα μέλη της οικογένειάς του μπορεί να βιώνουν άγχος, φόβο ή θλίψη, ενώ παράλληλα καλούνται να προσαρμοστούν σε νέες συνθήκες. Η ψυχοθεραπεία βοηθά το άτομο να βρει τρόπους προσαρμογής, να ενισχύσει την ψυχική του ανθεκτικότητα, να ενδυναμωθεί και να διεκδικήσει μια καλύτερη ποιότητα ζωής παρά τις αντιξοότητες.</p>
+<div class="exq">«Όταν δεν μιλάει το στόμα, μιλάει το σώμα.»<b>— Gabor Maté</b></div>
+<div class="exq">«Μέσα από δυσκολίες ανακαλύπτουμε τη δύναμη που δεν ξέραμε ότι είχαμε.»<b>— Helen Keller</b></div></div>
+<div class="l-en"><p>A chronic illness affects not only the body but also brings an emotional burden. Managing the uncertainty, pain or limitations that come with it can be especially demanding. The person and their family may experience anxiety, fear or sadness while being asked to adapt to new circumstances. Psychotherapy helps a person find ways to adjust, build psychological resilience, feel empowered, and claim a better quality of life despite adversity.</p>
+<div class="exq">“When the mouth does not speak, the body speaks.”<b>— Gabor Maté</b></div>
+<div class="exq">“Through difficulty we discover strength we never knew we had.”<b>— Helen Keller</b></div></div>
+</div></details>
+          <details class="ex exd"><summary><span class="n">ix.</span><h3 class="l-el">Διαταραχές προσωπικότητας</h3><h3 class="l-en">Personality disorders</h3></summary><div class="exbody">
+<div class="l-el"><p>Πρόκειται για σταθερά μοτίβα σκέψης, συναισθήματος και συμπεριφοράς που δυσκολεύουν το άτομο στις σχέσεις και στην καθημερινότητά του. Μπορεί να εκδηλώνονται με δυσκολίες στις σχέσεις, έντονες συναισθηματικές μεταπτώσεις, φόβο εγκατάλειψης ή και ακαμψία στη σκέψη. Η ψυχοθεραπεία δεν στοχεύει στην «αλλαγή χαρακτήρα», αλλά στο να αναδείξει νέους, πιο λειτουργικούς τρόπους σύνδεσης και διαχείρισης των καταστάσεων.</p>
+<div class="exq">«Δεν είμαι αυτό που μου συνέβη, είμαι αυτό που επιλέγω να γίνω.»<b>— Carl Jung</b></div>
+<div class="exq">«Το παράδοξο είναι πως όταν αποδέχομαι τον εαυτό μου όπως είναι, τότε μόνο μπορώ να αλλάξω.»<b>— Carl Rogers</b></div></div>
+<div class="l-en"><p>These are stable patterns of thinking, feeling and behaving that make relationships and everyday life difficult. They may show up as relationship difficulties, intense emotional swings, fear of abandonment or rigidity of thought. Psychotherapy does not aim to “change one’s character”, but to reveal new, more functional ways of connecting and coping.</p>
+<div class="exq">“I am not what happened to me, I am what I choose to become.”<b>— Carl Jung</b></div>
+<div class="exq">“The curious paradox is that when I accept myself just as I am, then I can change.”<b>— Carl Rogers</b></div></div>
+</div></details>
       </div>
     </div>
   </div>
@@ -641,68 +819,43 @@ footer .bottom a:hover{text-decoration:underline}
 <section class="journey pad" id="diadromi">
   <div class="wrap">
     <span class="eyebrow rv"><span class="l-el">Θεραπευτική Διαδρομή</span><span class="l-en">The Journey</span></span>
-    <h2 class="sec-title rv l-el">Τα βήματα του <em>ταξιδιού</em> μας</h2>
-    <h2 class="sec-title rv l-en">The steps of our <em>journey</em></h2>
-    <p class="lead rv d1 l-el">Όπως η κάμπια μεταμορφώνεται σε πεταλούδα, έτσι και η θεραπεία εξελίσσεται σταδιακά — με τον δικό σας ρυθμό και σε ένα πλαίσιο ασφάλειας.</p>
-    <p class="lead rv d1 l-en">Just as the caterpillar transforms into a butterfly, therapy unfolds gradually — at your own pace and within a framework of safety.</p>
+    <h2 class="sec-title rv l-el">Η πορεία της <em>θεραπείας</em></h2>
+    <h2 class="sec-title rv l-en">The course of <em>therapy</em></h2>
+    <p class="lead rv d1 l-el">Η ψυχοθεραπεία είναι μια σταδιακή διαδικασία αλλαγής που χρειάζεται χρόνο και ένα ασφαλές περιβάλλον ώστε να εξελιχθεί, με σεβασμό στον προσωπικό ρυθμό και στις ανάγκες του κάθε θεραπευόμενου.</p>
+    <p class="lead rv d1 l-en">Psychotherapy is a gradual process of change that needs time and a safe environment in which to unfold, respecting each person’s pace and needs.</p>
     <div class="path-wrap">
       <svg class="path-svg" viewBox="0 0 52 1000" preserveAspectRatio="none" aria-hidden="true">
         <path d="M26 10 C6 120,46 200,26 320 C6 440,46 520,26 640 C6 760,46 840,26 990"/>
       </svg>
-      <div class="step rv"><div class="card"><span class="k l-el">Πρώτο βήμα</span><span class="k l-en">First step</span><h3 class="l-el">Το πρώτο ραντεβού</h3><h3 class="l-en">The first meeting</h3><p class="l-el">Ένας χώρος να γνωριστούμε χωρίς πίεση. Μοιράζεστε όσα σας φέρνουν εδώ, ενώ εγώ ακούω, κατανοώ και σας εξηγώ πώς μπορούμε να συνεργαστούμε.</p><p class="l-en">A space to meet without pressure. You share what brings you here, while I listen, understand and explain how we can work together.</p></div><div class="dotcol"><span class="dot">α</span></div><div class="empty"></div></div>
-      <div class="step rv"><div class="empty"></div><div class="dotcol"><span class="dot">β</span></div><div class="card"><span class="k l-el">Κατανόηση</span><span class="k l-en">Understanding</span><h3 class="l-el">Λήψη ιστορικού & αξιολόγηση</h3><h3 class="l-en">History & assessment</h3><p class="l-el">Στις πρώτες συνεδρίες διερευνούμε μαζί τις δυσκολίες, το ιστορικό και το πλαίσιο της ζωής σας, ώστε να αποκτήσουμε μια καθαρή εικόνα.</p><p class="l-en">In the first sessions we explore your difficulties, history and life context together, to gain a clear picture.</p></div></div>
-      <div class="step rv"><div class="card"><span class="k l-el">Συμφωνία</span><span class="k l-en">Agreement</span><h3 class="l-el">Θεραπευτικοί στόχοι</h3><h3 class="l-en">Setting the goals</h3><p class="l-el">Ορίζουμε από κοινού ρεαλιστικούς, ουσιαστικούς στόχους και εξοικειώνεστε με τη λογική του γνωσιακού-συμπεριφοριστικού μοντέλου.</p><p class="l-en">We jointly set realistic, meaningful goals and you become familiar with the logic of the cognitive-behavioural model.</p></div><div class="dotcol"><span class="dot">γ</span></div><div class="empty"></div></div>
-      <div class="step rv"><div class="empty"></div><div class="dotcol"><span class="dot">δ</span></div><div class="card"><span class="k l-el">Εργασία</span><span class="k l-en">The work</span><h3 class="l-el">Αλλαγή σε δράση</h3><h3 class="l-en">Change in action</h3><p class="l-el">Με τεκμηριωμένες τεχνικές CBT δουλεύουμε πάνω στα μοτίβα σκέψης, συναισθήματος και συμπεριφοράς — βήμα-βήμα, με πρακτικά εργαλεία για την καθημερινότητα.</p><p class="l-en">Using evidence-based CBT techniques, we work on patterns of thought, emotion and behaviour — step by step, with practical tools for daily life.</p></div></div>
-      <div class="step rv"><div class="card"><span class="k l-el">Ολοκλήρωση</span><span class="k l-en">Integration</span><h3 class="l-el">Αυτονομία & εξέλιξη</h3><h3 class="l-en">Autonomy & growth</h3><p class="l-el">Παγιώνουμε ό,τι έχει αλλάξει, ενισχύουμε την ανθεκτικότητα και προετοιμαζόμαστε ώστε να συνεχίσετε με σιγουριά — τα φτερά της πεταλούδας ανοίγουν.</p><p class="l-en">We consolidate what has changed, strengthen resilience and prepare you to continue with confidence — the butterfly’s wings open.</p></div><div class="dotcol"><span class="dot">ε</span></div><div class="empty"></div></div>
+      <div class="step rv"><div class="card"><span class="k l-el">Πρώτο βήμα</span><span class="k l-en">First step</span><h3 class="l-el">Το πρώτο ραντεβού</h3><h3 class="l-en">The first appointment</h3><p class="l-el">Η πρώτη συνάντηση αποτελεί μια ευκαιρία γνωριμίας και διερεύνησης των λόγων που σας οδήγησαν στη θεραπεία. Δημιουργούμε ένα πρώτο πλαίσιο συνεργασίας, όπου μπορείτε να μοιραστείτε όσα σας απασχολούν με ασφάλεια και χωρίς κριτική.</p><p class="l-en">The first meeting is an opportunity to get to know each other and explore what has brought you to therapy. We create an initial framework of collaboration in which you can share what concerns you, safely and without judgement.</p></div><div class="dotcol"><span class="dot">α</span></div><div class="empty"></div></div>
+      <div class="step rv"><div class="empty"></div><div class="dotcol"><span class="dot">β</span></div><div class="card"><span class="k l-el">Κατανόηση</span><span class="k l-en">Understanding</span><h3 class="l-el">Λήψη ιστορικού & Αξιολόγηση</h3><h3 class="l-en">History & assessment</h3><p class="l-el">Μαζί εξερευνούμε τις δυσκολίες που αντιμετωπίζετε και τις εμπειρίες που έχουν διαμορφώσει τον τρόπο που σκέφτεστε και αντιδράτε. Στόχος είναι να αποκτηθεί μια ολοκληρωμένη εικόνα των αναγκών σας.</p><p class="l-en">Together we explore the difficulties you are facing and the experiences that have shaped the way you think and react. The aim is to gain a complete picture of your needs.</p></div></div>
+      <div class="step rv"><div class="card"><span class="k l-el">Στόχοι</span><span class="k l-en">Goals</span><h3 class="l-el">Σχεδιασμός της θεραπευτικής πορείας</h3><h3 class="l-en">Planning the therapeutic course</h3><p class="l-el">Διαμορφώνουμε από κοινού τους στόχους της θεραπείας και δημιουργούμε ένα εξατομικευμένο πλάνο, βασισμένο στις ανάγκες σας και στις αρχές της Γνωσιακής-Συμπεριφοριστικής Θεραπείας.</p><p class="l-en">We jointly shape the goals of therapy and create an individualised plan, based on your needs and on the principles of Cognitive-Behavioural Therapy.</p></div><div class="dotcol"><span class="dot">γ</span></div><div class="empty"></div></div>
+      <div class="step rv"><div class="empty"></div><div class="dotcol"><span class="dot">δ</span></div><div class="card"><span class="k l-el">Αλλαγή</span><span class="k l-en">Change</span><h3 class="l-el">Νέες δεξιότητες & εφαρμογή στην καθημερινότητα</h3><h3 class="l-en">New skills & everyday application</h3><p class="l-el">Μέσα από τεκμηριωμένες τεχνικές της ΓΣΘ εργαζόμαστε πάνω στις σκέψεις, τα συναισθήματα και τις συμπεριφορές που συνδέονται με τις δυσκολίες σας. Σταδιακά αναπτύσσονται νέοι τρόποι αντιμετώπισης και πρακτικά εργαλεία που μπορούν να εφαρμοστούν στην καθημερινή ζωή.</p><p class="l-en">Through evidence-based CBT techniques we work on the thoughts, emotions and behaviours connected to your difficulties. Gradually, new ways of coping and practical tools are developed that can be applied in everyday life.</p></div></div>
+      <div class="step rv"><div class="card"><span class="k l-el">Ολοκλήρωση</span><span class="k l-en">Completion</span><h3 class="l-el">Ενδυνάμωση & αυτονομία</h3><h3 class="l-en">Empowerment & autonomy</h3><p class="l-el">Η θεραπευτική διαδικασία ολοκληρώνεται όταν οι νέες δεξιότητες έχουν ενσωματωθεί στη ζωή σας και αισθάνεστε ότι μπορείτε να διαχειρίζεστε τις προκλήσεις που προκύπτουν. Στόχος δεν είναι η εξάρτηση από τη θεραπεία, αλλά η ενδυνάμωση και η αυτονομία.</p><p class="l-en">The therapeutic process is completed when the new skills have become part of your life and you feel able to manage the challenges that arise. The goal is not dependence on therapy, but empowerment and autonomy.</p></div><div class="dotcol"><span class="dot">ε</span></div><div class="empty"></div></div>
     </div>
   </div>
 </section>
 
-<!-- ================= SCIENCE / PUBLICATIONS ================= -->
-<section class="science pad">
-  <div class="wrap">
-    <span class="eyebrow rv"><span class="l-el">Επιστημονική Δραστηριότητα</span><span class="l-en">Scientific Work</span></span>
-    <h2 class="sec-title rv l-el">Έρευνα, συγγραφή & <em>συνεχής</em> εκπαίδευση</h2>
-    <h2 class="sec-title rv l-en">Research, writing & <em>continuous</em> training</h2>
-    <p class="lead rv d1 l-el">Η επιστημονική μου δραστηριότητα περιλαμβάνει δημοσιεύσεις σε διεθνή περιοδικά, συγγραφή και μετάφραση επιστημονικών βιβλίων, καθώς και εισηγήσεις σε συνέδρια και σεμινάρια για ειδικούς ψυχικής υγείας.</p>
-    <p class="lead rv d1 l-en">My scientific work includes publications in international journals, authoring and translating academic books, and presenting at conferences and seminars for mental health professionals.</p>
-    <div class="sci-tabs rv d2">
-      <button class="on" data-tab="pubs"><span class="l-el">Δημοσιεύσεις</span><span class="l-en">Publications</span></button>
-      <button data-tab="pres"><span class="l-el">Ανακοινώσεις & Παρουσιάσεις</span><span class="l-en">Presentations</span></button>
-      <button data-tab="books"><span class="l-el">Βιβλία</span><span class="l-en">Books</span></button>
-    </div>
-    <div class="sci-panel on" id="pubs">
-      <div class="pub rv"><p class="l-el"><b>Vasileiou E., Fexi P., Spyropoulou A., Mourikis I., Chalimourdas T., Zervas I.</b> (2022). Obsessive-compulsive symptoms in pregnancy: their relationship with obsessive beliefs and obsessive-compulsive personality traits.</p><p class="l-en"><b>Vasileiou E., Fexi P., Spyropoulou A., Mourikis I., Chalimourdas T., Zervas I.</b> (2022). Obsessive-compulsive symptoms in pregnancy: their relationship with obsessive beliefs and obsessive-compulsive personality traits.</p><span class="where">Psychiatriki, 33, 39–48</span></div>
-      <div class="pub rv d1"><p class="l-el"><b>Βασιλείου Α., Αργυροπούλου Μ.</b> (2021). Αποτελεσματικότητα της γνωσιακής-συμπεριφοριστικής θεραπείας στη διαταραχή διαδικτυακών παιχνιδιών: ανασκόπηση βιβλιογραφίας.</p><p class="l-en"><b>Vasileiou A., Argyropoulou M.</b> (2021). Effectiveness of cognitive-behavioural therapy in internet gaming disorder: a literature review.</p><span class="where">Γνωσιακή–Συμπεριφοριστική Έρευνα & Θεραπεία, 7, 47–56</span></div>
-      <div class="pub rv d2"><p class="l-el"><b>Βασιλείου Α., Αργυροπούλου Μ.</b> (2021). Γνωσιακή Θεραπεία βασισμένη στην ενσυνειδητότητα (MBCT): παρουσίαση ομαδικού προγράμματος για την αντιμετώπιση της ιδεοψυχαναγκαστικής διαταραχής.</p><p class="l-en"><b>Vasileiou A., Argyropoulou M.</b> (2021). Mindfulness-based cognitive therapy (MBCT): presentation of a group programme for obsessive-compulsive disorder.</p><span class="where">Γνωσιακή–Συμπεριφοριστική Έρευνα & Θεραπεία, 2, 23–32</span></div>
-    </div>
-    <div class="sci-panel" id="pres">
-      <div class="pub rv"><p class="l-el"><b>Βασιλείου Α., Χαρίλα Ν.</b> «Μελέτη ατομικής περίπτωσης με αποφευκτική διαταραχή προσωπικότητας».</p><p class="l-en"><b>Vasileiou A., Charila N.</b> Individual case study on avoidant personality disorder.</p><span class="where">7ο Πανελλήνιο Συνέδριο Γνωσιακών Ψυχοθεραπειών · Ηράκλειο 2022</span></div>
-      <div class="pub rv d1"><p class="l-el"><b>Βασιλείου Α., Σκαλή Θ.</b> «Παιδί Σχολικής Ηλικίας και Οικογένεια στον καιρό της πανδημίας».</p><p class="l-en"><b>Vasileiou A., Skali T.</b> School-age children and the family in the time of the pandemic.</p><span class="where">9ο Δημοτικό Σχολείο Αθηνών · 2021</span></div>
-      <div class="pub rv d2"><p class="l-el"><b>Βασιλείου Α., Αργυροπούλου Μ.</b> «Αποτελεσματικότητα της Γνωσιακής-Συμπεριφοριστικής Θεραπείας στη Διαταραχή Διαδικτυακών Παιχνιδιών».</p><p class="l-en"><b>Vasileiou A., Argyropoulou M.</b> Effectiveness of CBT in internet gaming disorder.</p><span class="where">Διημερίδα Εταιρείας Γνωσιακών Συμπεριφοριστικών Σπουδών · Αθήνα 2021</span></div>
-      <div class="pub rv d3"><p class="l-el"><b>Βασιλείου Α. κ.ά.</b> Δύο επιστημονικές ανακοινώσεις (e-posters) για την ιδεοψυχαναγκαστική διαταραχή και τις δυσλειτουργικές πεποιθήσεις στην περιγεννητική περίοδο.</p><p class="l-en"><b>Vasileiou A. et al.</b> Two scientific e-poster presentations on OCD and dysfunctional beliefs in the perinatal period.</p><span class="where">27ο Πανελλήνιο Συνέδριο Ψυχιατρικής · Ηράκλειο 2019</span></div>
-    </div>
-    <div class="sci-panel" id="books">
-      <div class="pub rv"><p class="l-el"><b>Abramowitz, J.</b> (2023). <i>Αντιμετωπίζοντας την ΙΨΔ: Ένας οδηγός αυτοβοήθειας 10 βημάτων.</i> Μετάφραση: Βασιλείου Α., Όουενς Δ. — Επιμ.: Χαλιμούρδας Θ., Χαρίλα Ν.</p><p class="l-en"><b>Abramowitz, J.</b> (2023). <i>Getting Over OCD: A 10-Step Workbook for Taking Back Your Life</i> (Greek edition). Translation: Vasileiou A., Owens D.</p><span class="where">Εκδόσεις Βήτα · Αθήνα</span></div>
-      <div class="pub rv d1"><p class="l-el">Στο πλαίσιο της συνεχούς επιμόρφωσης, παρακολουθώ πολυάριθμα συνέδρια, εκπαιδευτικά προγράμματα και σεμινάρια για τις τρέχουσες επιστημονικές εξελίξεις και την εφαρμογή τους στην ψυχοθεραπεία.</p><p class="l-en">As part of continuous professional development, I attend numerous conferences, training programmes and seminars on current scientific developments and their application in psychotherapy.</p><span class="where l-el">Διαρκής επαγγελματική εξέλιξη</span><span class="where l-en">Ongoing professional development</span></div>
-    </div>
-  </div>
-</section>
+
 
 <!-- ================= SPACE GALLERY ================= -->
 <section class="space pad" id="xoros">
   <div class="wrap">
     <span class="eyebrow rv"><span class="l-el">Ο Χώρος</span><span class="l-en">The Space</span></span>
-    <h2 class="sec-title rv l-el">Ένα <em>ασφαλές</em> πλαίσιο για να ανθίσετε</h2>
-    <h2 class="sec-title rv l-en">A <em>safe</em> place to bloom</h2>
-    <p class="lead rv d1 l-el">Ένας ζεστός, φιλόξενος χώρος στην Κέρκυρα, σχεδιασμένος να προσφέρει ηρεμία και εμπιστοσύνη — εκεί όπου η θεραπευτική διαδρομή αποκτά σάρκα και οστά.</p>
-    <p class="lead rv d1 l-en">A warm, welcoming space in Corfu, designed to offer calm and trust — where the therapeutic journey takes shape.</p>
+    <h2 class="sec-title rv l-el">Ένας χώρος <em>ασφάλειας</em> και εμπιστοσύνης</h2>
+    <h2 class="sec-title rv l-en">A space of <em>safety</em> and trust</h2>
+    <p class="lead rv d1 l-el">Ένας ήρεμος, ζεστός και διακριτικός χώρος όπου ο σεβασμός και η αποδοχή αποτελούν τη βάση κάθε θεραπευτικής συνάντησης.</p>
+    <p class="lead rv d1 l-en">A calm, warm and discreet space where respect and acceptance form the foundation of every therapeutic meeting.</p>
     <div class="gal">
       <div class="g w2 h2 rv-scale"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/7da72a014017d369f9323d1ea71e501a8e987f47/13448594-79EE-47AB-9415-09777BD0E378.png" alt="Ο χώρος θεραπείας" class="zoom" loading="lazy"></div>
       <div class="g rv-scale d1"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/7da72a014017d369f9323d1ea71e501a8e987f47/730BA2A1-EA97-4E7B-92AD-56CD48695EEC.png" alt="Χώρος συνεδριών" class="zoom" loading="lazy"></div>
       <div class="g rv-scale d2"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/7da72a014017d369f9323d1ea71e501a8e987f47/D3F5E498-511E-4B80-B265-3D9E3C195399.png" alt="Λεπτομέρεια χώρου" class="zoom" loading="lazy"></div>
       <div class="g rv-scale d1"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/7da72a014017d369f9323d1ea71e501a8e987f47/4F0100D3-DF3A-41E8-9C92-83B5212128BF.png" alt="Καθιστικό χώρου" class="zoom" loading="lazy"></div>
       <div class="g rv-scale d2"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/7da72a014017d369f9323d1ea71e501a8e987f47/BFC8710E-5D64-4E58-96A4-442D894DD6DB.png" alt="Είσοδος γραφείου" class="zoom" loading="lazy"></div>
+      <!-- Επιπλέον φωτογραφίες χώρου: ανεβάστε στο repo ως xoros-6.png, xoros-7.png, xoros-8.png — οι κάρτες εμφανίζονται αυτόματα -->
+      <div class="g extra rv-scale d1"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/refs/heads/main/xoros-6.png" alt="Ο χώρος συνεδριών" class="zoom" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="g extra rv-scale d2"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/refs/heads/main/xoros-7.png" alt="Λεπτομέρεια του χώρου" class="zoom" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="g extra rv-scale d1"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/refs/heads/main/xoros-8.png" alt="Ο χώρος αναμονής" class="zoom" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
     </div>
   </div>
 </section>
@@ -733,8 +886,8 @@ footer .bottom a:hover{text-decoration:underline}
     <div class="grid">
       <div class="sticky">
         <span class="eyebrow rv"><span class="l-el">Συχνές Ερωτήσεις</span><span class="l-en">FAQ</span></span>
-        <h2 class="sec-title rv l-el">Ό,τι καλό είναι να <em>γνωρίζετε</em></h2>
-        <h2 class="sec-title rv l-en">What it helps to <em>know</em></h2>
+        <h2 class="sec-title rv l-el">Χρήσιμες πληροφορίες πριν <em>ξεκινήσουμε</em></h2>
+        <h2 class="sec-title rv l-en">Useful information before <em>we begin</em></h2>
         <p class="lead rv d1 l-el">Απαντήσεις σε ερωτήματα που συχνά προκύπτουν πριν το πρώτο ραντεβού.</p>
         <p class="lead rv d1 l-en">Answers to questions that often come up before the first session.</p>
         <div class="frame rv-scale d2"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/7da72a014017d369f9323d1ea71e501a8e987f47/7F5601A8-6CB7-46CD-9E92-8057EE6C2332.png" alt="Αικατερίνη Βασιλείου" class="zoom" loading="lazy"></div>
@@ -797,15 +950,15 @@ footer .bottom a:hover{text-decoration:underline}
 <section class="contact pad" id="epikoinonia">
   <div class="wrap">
     <span class="eyebrow rv"><span class="l-el">Επικοινωνία</span><span class="l-en">Contact</span></span>
-    <h2 class="sec-title rv l-el">Κάντε το <em>πρώτο</em> βήμα</h2>
-    <h2 class="sec-title rv l-en">Take the <em>first</em> step</h2>
+    <h2 class="sec-title rv l-el">Ας <em>ξεκινήσουμε</em></h2>
+    <h2 class="sec-title rv l-en">Let’s <em>begin</em></h2>
     <p class="lead rv d1 l-el">Είμαι εδώ για να σας ακούσω. Κλείστε το πρώτο σας ραντεβού ή επικοινωνήστε για οποιαδήποτε ερώτηση.</p>
     <p class="lead rv d1 l-en">I’m here to listen. Book your first session or get in touch with any question.</p>
     <div class="grid">
       <div class="c-card rv-l">
         <h3 class="l-el">Στοιχεία επικοινωνίας</h3><h3 class="l-en">Get in touch</h3>
         <div class="c-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg></span><div><b class="l-el">Ραντεβού online</b><b class="l-en">Book online</b><a href="https://www.doctoranytime.gr/d/Psychologos/aikaterini-vasileiou" target="_blank" rel="noopener">doctoranytime.gr</a></div></div>
-        <div class="c-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b class="l-el">Χώρος συνεδριών</b><b class="l-en">Practice location</b><span class="l-el">Κέρκυρα</span><span class="l-en">Corfu, Greece</span></div></div>
+        <div class="c-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b class="l-el">Χώρος συνεδριών</b><b class="l-en">Practice location</b><a class="l-el" href="https://www.google.com/maps/search/?api=1&query=%CE%9C%CE%B1%CE%BD%CF%84%CE%B6%CE%AC%CF%81%CE%BF%CF%85+6%2C+%CE%9A%CE%AD%CF%81%CE%BA%CF%85%CF%81%CE%B1" target="_blank" rel="noopener">Μαντζάρου 6, 3ος όροφος, Κέρκυρα</a><a class="l-en" href="https://www.google.com/maps/search/?api=1&query=Mantzarou+6%2C+Corfu" target="_blank" rel="noopener">6 Mantzarou St, 3rd floor, Corfu</a></div></div>
         <div class="c-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b class="l-el">Συνεδρίες</b><b class="l-en">Sessions</b><span class="l-el">Μία φορά την εβδομάδα · 50 λεπτά · δια ζώσης & online</span><span class="l-en">Once a week · 50 minutes · in person & online</span></div></div>
         <div class="c-social">
           <a href="https://www.instagram.com/vasileiou.psychologist/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
@@ -815,10 +968,52 @@ footer .bottom a:hover{text-decoration:underline}
         <a class="cta l-el" style="margin-top:2rem;background:var(--camel);border-color:var(--camel)" href="https://www.doctoranytime.gr/d/Psychologos/aikaterini-vasileiou" target="_blank" rel="noopener">Κλείστε ραντεβού τώρα</a>
         <a class="cta l-en" style="margin-top:2rem;background:var(--camel);border-color:var(--camel)" href="https://www.doctoranytime.gr/d/Psychologos/aikaterini-vasileiou" target="_blank" rel="noopener">Book a session now</a>
       </div>
+
+    
       <div class="map rv-r">
-        <iframe title="Χάρτης – Κέρκυρα" src="https://www.google.com/maps?q=Corfu,Greece&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe title="Χάρτης – Κέρκυρα" src="https://www.google.com/maps?q=%CE%9C%CE%B1%CE%BD%CF%84%CE%B6%CE%AC%CF%81%CE%BF%CF%85%206%2C%20%CE%9A%CE%AD%CF%81%CE%BA%CF%85%CF%81%CE%B1&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
+<div class="iform rv">
+      <h3><span class="l-el">Φόρμα Εκδήλωσης Ενδιαφέροντος</span><span class="l-en">Expression of Interest</span></h3>
+      <p class="fnote"><span class="l-el">Συμπληρώστε τη φόρμα και θα επικοινωνήσω μαζί σας το συντομότερο δυνατόν. Εναλλακτικά, μπορείτε να κλείσετε απευθείας ραντεβού μέσω doctoranytime.</span><span class="l-en">Fill in the form and I will get back to you as soon as possible. Alternatively, you can book directly via doctoranytime.</span></p>
+      <form id="interestForm" novalidate>
+        <div class="frow">
+          <div><label for="if-name"><span class="l-el">Ονοματεπώνυμο *</span><span class="l-en">Full name *</span></label><input id="if-name" name="name" type="text" required autocomplete="name"></div>
+          <div><label for="if-email"><span class="l-el">Email *</span><span class="l-en">Email *</span></label><input id="if-email" name="email" type="email" required autocomplete="email"></div>
+        </div>
+        <div class="frow">
+          <div><label for="if-phone"><span class="l-el">Τηλέφωνο (προαιρετικό)</span><span class="l-en">Phone (optional)</span></label><input id="if-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div></div>
+        </div>
+        <label for="if-msg"><span class="l-el">Μήνυμα *</span><span class="l-en">Message *</span></label>
+        <textarea id="if-msg" name="message" required></textarea>
+        <button type="submit" class="cta" style="margin-top:1.2rem;border:0;cursor:pointer"><span class="l-el">Αποστολή</span><span class="l-en">Send</span></button>
+        <p id="if-status" class="fnote" style="margin:.9rem 0 0;display:none"></p>
+      </form>
+    </div>
+    <script>
+    (function(){
+      /* ΣΥΜΠΛΗΡΩΣΤΕ ΕΔΩ το email της κ. Βασιλείου για να λειτουργήσει η φόρμα */
+      var CONTACT_EMAIL = "SET-EMAIL-HERE@example.com";
+      var f = document.getElementById('interestForm');
+      if(!f) return;
+      f.addEventListener('submit', function(e){
+        e.preventDefault();
+        var n = document.getElementById('if-name').value.trim(),
+            em = document.getElementById('if-email').value.trim(),
+            ph = document.getElementById('if-phone').value.trim(),
+            m = document.getElementById('if-msg').value.trim(),
+            st = document.getElementById('if-status');
+        var isEl = !document.documentElement.classList.contains('en');
+        if(!n || !em || !m){ st.style.display='block'; st.textContent = isEl ? 'Παρακαλώ συμπληρώστε τα υποχρεωτικά πεδία.' : 'Please fill in the required fields.'; return; }
+        var subject = encodeURIComponent((isEl?'Εκδήλωση ενδιαφέροντος — ':'Expression of interest — ') + n);
+        var body = encodeURIComponent((isEl?'Ονοματεπώνυμο: ':'Name: ') + n + '\nEmail: ' + em + (ph? '\n'+(isEl?'Τηλέφωνο: ':'Phone: ')+ph : '') + '\n\n' + m);
+        window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + subject + '&body=' + body;
+        st.style.display='block'; st.textContent = isEl ? 'Άνοιξε το πρόγραμμα email σας για την αποστολή του μηνύματος.' : 'Your email app has opened to send the message.';
+      });
+    })();
+    </script>
   </div>
 </section>
 
