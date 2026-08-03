@@ -78,11 +78,11 @@ a{color:inherit}
   transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 #preloader.hide { opacity: 0; visibility: hidden; pointer-events: none; }
-#preloader img { width: 160px; height: auto; animation: pulseLogo 2s infinite ease-in-out; }
-@keyframes pulseLogo {
-  0% { transform: scale(0.95); opacity: 0.6; }
-  50% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(0.95); opacity: 0.6; }
+#preloader img { width: 250px; height: auto; opacity: 0; animation: wowReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+@keyframes wowReveal {
+  0% { transform: scale(0.8) translateY(20px); opacity: 0; filter: blur(12px); }
+  50% { opacity: 1; filter: blur(0); }
+  100% { transform: scale(1) translateY(0); opacity: 1; filter: blur(0); }
 }
 
 /* ---------- language toggle ---------- */
@@ -317,11 +317,6 @@ nav.desk a.nl:hover::after{transform:scaleX(1);transform-origin:left}
 
 /* ---------- FAQ ---------- */
 .faq{background:var(--paper)}
-.faq .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.4rem,5vw,4.5rem);align-items:center}
-.faq .sticky{position:sticky;top:110px}
-.faq .sticky .frame{border-radius:22px;overflow:hidden;margin-top:1.8rem;box-shadow:0 26px 60px -30px rgba(54,46,35,.45)}
-.faq .sticky img{width:100%;cursor:zoom-in;transition:transform 1.1s var(--ease)}
-.faq .sticky .frame:hover img{transform:scale(1.04)}
 .acc{border-bottom:1px solid var(--line)}
 .acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem 0;font-family:var(--serif);font-size:1.16rem;font-weight:600;transition:color .3s}
 .acc summary::-webkit-details-marker{display:none}
@@ -402,11 +397,10 @@ footer .bottom a:hover{text-decoration:underline}
   .h-fly{order:-1;margin-top:1rem}
   .h-fly svg{width:min(300px,62vw)}
   .hero{padding-top:7rem}
-  .concept .grid,.about .grid,.faq .grid,.contact .grid,.expertise .grid{grid-template-columns:1fr}
+  .concept .grid,.about .grid,.contact .grid,.expertise .grid{grid-template-columns:1fr}
   .symb{position:static}
   .a-photo{max-width:440px;margin:0 auto}
   .expertise .ex-img-col{position:static;margin-bottom:2rem}
-  .faq .sticky{position:static}
   .step{grid-template-columns:52px 1fr;gap:1.2rem}
   .path-line-bg, .path-line-fill{left:26px;transform:none;width:2px}
   .step .dotcol{grid-column:1;grid-row:1}
@@ -521,8 +515,8 @@ details.exd .exbody ul{margin:.45rem 0 .7rem 1.15rem;line-height:1.65;font-size:
         <span class="l-el">Αικατερίνη Βασιλείου · Ψυχολόγος Κέρκυρα · CBT</span>
         <span class="l-en">Aikaterini Vasileiou · Psychologist Corfu · CBT</span>
       </h2>
-      <h1 class="l-el"><span class="line"><span>Η αλλαγή ξεκινά</span></span><span class="line"><span>από <em>μέσα μας</em> —</span></span><span class="line"><span>από τον τρόπο που σκεφτόμαστε,</span></span><span class="line"><span>νιώθουμε και επιλέγουμε να ζούμε.</span></span></h1>
-      <h1 class="l-en"><span class="line"><span>Change begins</span></span><span class="line"><span><em>within us</em> —</span></span><span class="line"><span>in the way we think,</span></span><span class="line"><span>feel and choose to live.</span></span></h1>
+      <h1 class="l-el" style="font-size:clamp(2rem,4vw,3.2rem); line-height: 1.25;"><span class="line"><span>Η αλλαγή ξεκινά</span></span><span class="line"><span>από <em>μέσα μας</em> —</span></span><span class="line"><span>από τον τρόπο που σκεφτόμαστε,</span></span><span class="line"><span>νιώθουμε και επιλέγουμε να ζούμε.</span></span></h1>
+      <h1 class="l-en" style="font-size:clamp(2rem,4vw,3.2rem); line-height: 1.25;"><span class="line"><span>Change begins</span></span><span class="line"><span><em>within us</em> —</span></span><span class="line"><span>in the way we think,</span></span><span class="line"><span>feel and choose to live.</span></span></h1>
       
       <p class="lead l-el">Κάθε αλλαγή ξεκινά όταν βρίσκουμε έναν χώρο να μιλήσουμε και να ακουστούμε.</p>
       <p class="lead l-en">Every change begins when we find a space to speak and be heard.</p>
@@ -933,64 +927,62 @@ details.exd .exbody ul{margin:.45rem 0 .7rem 1.15rem;line-height:1.65;font-size:
 
 <!-- ================= FAQ ================= -->
 <section class="faq pad" id="erotiseis">
-  <div class="wrap">
-    <div class="grid">
-      <div class="sticky">
-        <span class="eyebrow rv"><span class="l-el">Συχνές Ερωτήσεις</span><span class="l-en">FAQ</span></span>
-        <h2 class="sec-title rv l-el">Χρήσιμες πληροφορίες πριν <em>ξεκινήσουμε</em></h2>
-        <h2 class="sec-title rv l-en">Useful information before <em>we begin</em></h2>
-        <p class="lead rv d1 l-el">Απαντήσεις σε ερωτήματα που συχνά προκύπτουν πριν το πρώτο ραντεβού.</p>
-        <p class="lead rv d1 l-en">Answers to questions that often come up before the first session.</p>
-      </div>
-      <div class="acc-list">
-        <details class="acc rv" open><summary><span><span class="l-el">Πότε χρειάζεται να απευθυνθώ σε ψυχολόγο;</span><span class="l-en">When should I turn to a psychologist?</span></span><span class="pl"></span></summary><div class="body">
-          <div class="l-el"><p>Στην πορεία της ζωής όλοι ερχόμαστε αντιμέτωποι με προκλήσεις — από περιόδους έντονου άγχους ή θλίψης, μέχρι δυσκολίες στις σχέσεις μας. Η αναζήτηση ψυχολογικής υποστήριξης δεν αφορά μόνο την αντιμετώπιση δυσκολιών, αλλά και όσους θέλουν να γνωρίσουν καλύτερα τον εαυτό τους και να επενδύσουν στην προσωπική τους εξέλιξη. Ενδεικτικοί λόγοι:</p><ul><li>Αίσθημα αδυναμίας να ελέγξετε τα συναισθήματά σας (άγχος, θυμός, θλίψη).</li><li>Επιδείνωση των σχέσεων με αγαπημένα πρόσωπα.</li><li>Αίσθηση ότι η ζωή δεν ακολουθεί την πορεία που επιθυμείτε.</li><li>Επίμονη σωματική δυσφορία που σχετίζεται με έντονα συναισθήματα.</li><li>Δυσκολία να απολαύσετε την καθημερινότητα ή να βρείτε νόημα σε αυτή.</li><li>Επιθυμία για προσωπική ανάπτυξη και αυτογνωσία.</li></ul><p>Η απόφαση να ζητήσει κάποιος βοήθεια δεν είναι ένδειξη αδυναμίας, αλλά πράξη δύναμης, φροντίδας και υπευθυνότητας.</p></div>
-          <div class="l-en"><p>Throughout life we all face challenges — from periods of intense anxiety or sadness to difficulties in our relationships. Seeking psychological support is not only about overcoming difficulties, but also for those who wish to know themselves better and invest in their personal growth. Common reasons include:</p><ul><li>Feeling unable to manage your emotions (anxiety, anger, sadness).</li><li>Deteriorating relationships with loved ones.</li><li>A sense that life is not going the way you want.</li><li>Persistent physical discomfort linked to intense emotions.</li><li>Difficulty enjoying everyday life or finding meaning in it.</li><li>A desire for personal growth and self-awareness.</li></ul><p>Deciding to ask for help is not a sign of weakness, but an act of strength, care and responsibility.</p></div>
-        </div></details>
-        <details class="acc rv"><summary><span><span class="l-el">Πώς να επιλέξω ψυχολόγο;</span><span class="l-en">How do I choose a psychologist?</span></span><span class="pl"></span></summary><div class="body">
-          <p class="l-el">Είναι σημαντικό να βεβαιωθείτε ότι ο ψυχολόγος είναι απόφοιτος τμήματος ψυχολογίας και διαθέτει άδεια ασκήσεως επαγγέλματος. Η Γνωσιακή-Συμπεριφοριστική Ψυχοθεραπεία προσφέρεται από ψυχολόγους ή ψυχιάτρους με νόμιμη άδεια που έχουν ολοκληρώσει αναγνωρισμένη, πολυετή, πιστοποιημένη εκπαίδευση με θεωρητική κατάρτιση, πρακτική άσκηση και εποπτεία. Εξίσου σημαντική είναι μια καλή θεραπευτική σχέση βασισμένη στην εμπιστοσύνη. Έχετε πάντα το δικαίωμα να ρωτήσετε για το ακαδημαϊκό υπόβαθρο, την άδεια και την εκπαίδευση του θεραπευτή σας.</p>
-          <p class="l-en">It’s important to make sure the psychologist has graduated from a psychology department and holds a licence to practise. Cognitive Behavioural Therapy is provided by licensed psychologists or psychiatrists who have completed recognised, multi-year, certified training including theory, practice and supervision. Just as important is a good therapeutic relationship built on trust. You always have the right to ask about your therapist’s academic background, licence and training.</p>
-        </div></details>
-        <details class="acc rv"><summary><span><span class="l-el">Ποια η διαφορά ψυχολόγου, ψυχιάτρου, ψυχοθεραπευτή;</span><span class="l-en">Psychologist, psychiatrist, psychotherapist — what’s the difference?</span></span><span class="pl"></span></summary><div class="body">
-          <p class="l-el">Ο <b>ψυχίατρος</b> έχει σπουδάσει ιατρική με ειδικότητα στην ψυχιατρική· μπορεί να θέσει διάγνωση και να συνταγογραφήσει φαρμακευτική αγωγή όταν κρίνεται απαραίτητη. Ο <b>ψυχολόγος</b> είναι πτυχιούχος ψυχολογίας με άδεια ασκήσεως· μέσα από την ψυχοθεραπεία βοηθά το άτομο να κατανοήσει τις δυσκολίες του και να αναπτύξει αποτελεσματικότερους τρόπους σκέψης και διαχείρισης. Συχνά οι δύο ειδικότητες συνεργάζονται για το βέλτιστο αποτέλεσμα. Ο όρος <b>ψυχοθεραπευτής</b> δεν κατοχυρώνεται νομικά στην Ελλάδα και συνήθως αφορά ψυχολόγους ή ψυχιάτρους με επιπλέον εξειδικευμένη εκπαίδευση σε συγκεκριμένη ψυχοθεραπευτική μέθοδο.</p>
-          <p class="l-en">A <b>psychiatrist</b> has studied medicine and specialised in psychiatry; they can diagnose and prescribe medication when needed. A <b>psychologist</b> holds a psychology degree and a licence to practise; through psychotherapy they help a person understand their difficulties and develop more effective ways of thinking and coping. The two professions often collaborate for the best result. The term <b>psychotherapist</b> is not legally protected in Greece and usually refers to psychologists or psychiatrists with additional specialised training in a particular therapeutic method.</p>
-        </div></details>
-        <details class="acc rv"><summary><span><span class="l-el">Ποια η διαφορά ψυχανάλυσης και ψυχοθεραπείας;</span><span class="l-en">Psychoanalysis vs. psychotherapy?</span></span><span class="pl"></span></summary><div class="body">
-          <p class="l-el">Οι όροι συχνά συγχέονται, όμως δεν είναι ταυτόσημοι. Η ψυχανάλυση είναι μία από τις παλαιότερες προσεγγίσεις, που θεμελιώθηκε από τον Sigmund Freud. Σήμερα υπάρχουν και άλλες επιστημονικά τεκμηριωμένες μέθοδοι, η καθεμία με το δικό της θεωρητικό υπόβαθρο — όπως η Γνωσιακή-Συμπεριφοριστική Ψυχοθεραπεία, η Συστημική Ψυχοθεραπεία και η Θεραπεία Αποδοχής & Δέσμευσης. Ο όρος «ψυχοθεραπεία» είναι επομένως ευρύτερος και περιλαμβάνει πολλές διαφορετικές προσεγγίσεις.</p>
-          <p class="l-en">The terms are often confused, but they are not the same. Psychoanalysis is one of the oldest approaches, founded by Sigmund Freud. Today there are other scientifically supported methods, each with its own theoretical basis — such as Cognitive Behavioural Therapy, Systemic Therapy and Acceptance & Commitment Therapy. “Psychotherapy” is therefore a broader term that includes many different approaches.</p>
-        </div></details>
-        <details class="acc rv"><summary><span><span class="l-el">Πόσο διαρκεί η ψυχοθεραπεία;</span><span class="l-en">How long does therapy last?</span></span><span class="pl"></span></summary><div class="body">
-          <p class="l-el">Η ψυχοθεραπεία είναι μια πλήρως εξατομικευμένη διαδικασία, προσαρμοσμένη στις ανάγκες κάθε ατόμου, γι’ αυτό η διάρκειά της δεν μπορεί να καθοριστεί εκ των προτέρων με ακρίβεια. Ο αριθμός των συνεδριών εξαρτάται από παράγοντες όπως:</p>
-          <ul class="l-el"><li>η φύση και η πολυπλοκότητα των δυσκολιών</li><li>η ένταση των συμπτωμάτων</li><li>η θεραπευτική σχέση και η συνεργασία</li><li>το κίνητρο για αλλαγή και η δέσμευση στη διαδικασία</li></ul>
-          <p class="l-en">Therapy is a fully individualised process, tailored to each person’s needs, so its duration cannot be set precisely in advance. The number of sessions depends on factors such as:</p>
-          <ul class="l-en"><li>the nature and complexity of the difficulties</li><li>the intensity of the symptoms</li><li>the therapeutic relationship and collaboration</li><li>the motivation for change and commitment to the process</li></ul>
-        </div></details>
-        <details class="acc rv"><summary><span><span class="l-el">Πόσο διαρκεί μια συνεδρία και τι περιλαμβάνει;</span><span class="l-en">How long is a session and what does it involve?</span></span><span class="pl"></span></summary><div class="body">
-          <p class="l-el">Οι συνεδρίες πραγματοποιούνται μία φορά την εβδομάδα και έχουν διάρκεια 50 λεπτά. Στις πρώτες συνεδρίες γίνεται λήψη ιστορικού και διερεύνηση των δυσκολιών. Η εδραίωση μιας συνεργατικής θεραπευτικής σχέσης, η εξοικείωση με τη λογική του γνωσιακού-συμπεριφοριστικού μοντέλου και η συμφωνία για τους θεραπευτικούς στόχους αποτελούν τα βασικά κλειδιά για την έναρξη της θεραπείας.</p>
-          <p class="l-en">Sessions take place once a week and last 50 minutes. The first sessions involve taking a history and exploring your difficulties. Building a collaborative therapeutic relationship, becoming familiar with the logic of the cognitive-behavioural model and agreeing on therapeutic goals are the key foundations for beginning therapy.</p>
-        </div></details>
-        <details class="acc rv"><summary><span><span class="l-el">Τι ισχύει με το απόρρητο;</span><span class="l-en">What about confidentiality?</span></span><span class="pl"></span></summary><div class="body">
-          <p class="l-el">Σύμφωνα με την ισχύουσα νομοθεσία (Ν. 991/79, άρθρο 9), η ψυχολόγος δεσμεύεται από το επαγγελματικό απόρρητο, που διασφαλίζει την εχεμύθεια των προσωπικών σας πληροφοριών. Καμία πληροφορία δεν κοινοποιείται σε τρίτους χωρίς τη ρητή συγκατάθεσή σας. Η άρση του απορρήτου μπορεί να γίνει μόνο σε περιπτώσεις σοβαρού κινδύνου για τη ζωή ή τη σωματική ακεραιότητα του ίδιου ή άλλων. Η τήρηση του απορρήτου είναι βασική προϋπόθεση για ένα ασφαλές θεραπευτικό πλαίσιο, όπου μπορείτε να εκφραστείτε ελεύθερα.</p>
-          <p class="l-en">Under current legislation (Law 991/79, article 9), the psychologist is bound by professional confidentiality, which safeguards the privacy of your personal information. No information is shared with third parties without your explicit consent. Confidentiality may be lifted only in cases of serious risk to the life or physical safety of yourself or others. Maintaining confidentiality is a fundamental condition for a safe therapeutic framework in which you can express yourself freely.</p>
-        </div></details>
-        <details class="acc rv"><summary><span><span class="l-el">Ποια είναι η πολιτική ακύρωσης συνεδριών;</span><span class="l-en">What is the cancellation policy?</span></span><span class="pl"></span></summary><div class="body">
-          <p class="l-el">Σε περίπτωση ακύρωσης, είναι απαραίτητη η ενημέρωση τουλάχιστον 24 ώρες νωρίτερα, ώστε να είναι εφικτός ο επαναπρογραμματισμός μέσα στην ίδια εβδομάδα. Χωρίς έγκαιρη ενημέρωση, η συνεδρία χρεώνεται κανονικά, ως αποζημίωση για την κράτηση του χρόνου — εξαιρούνται έκτακτες περιπτώσεις, όπως ζητήματα υγείας ή άλλα σοβαρά απρόβλεπτα γεγονότα. Σε περίπτωση ακύρωσης από την πλευρά της θεραπεύτριας, γίνεται προσπάθεια έγκαιρης ενημέρωσης και επαναπρογραμματισμού μέσα στην ίδια εβδομάδα.</p>
-          <p class="l-en">If you need to cancel, please give at least 24 hours’ notice so the session can be rescheduled within the same week. Without timely notice, the session is charged in full, as compensation for the reserved time — except in emergencies such as health issues or other serious unforeseen events. If the therapist needs to cancel, every effort is made to inform you in good time and reschedule within the same week.</p>
-        </div></details>
-        <div class="helplines rv">
-          <h3 class="l-el">Δωρεάν γραμμές υποστήριξης</h3><h3 class="l-en">Free support helplines</h3>
-          <ul>
-            <li><b>10306</b><span class="l-el">Γραμμή Ψυχοκοινωνικής Υποστήριξης (24ωρη, ανώνυμη)</span><span class="l-en">Psychosocial Support Line (24h, anonymous)</span></li>
-            <li><b>1018</b><span class="l-el">Γραμμή Παρέμβασης στην Αυτοκτονία – ΚΛΙΜΑΚΑ</span><span class="l-en">Suicide Intervention Line – KLIMAKA</span></li>
-            <li><b>1056</b><span class="l-el">Γραμμή SOS – Το Χαμόγελο του Παιδιού</span><span class="l-en">SOS Line – The Smile of the Child</span></li>
-            <li><b>10454</b><span class="l-el">Εθνική Γραμμή για την Κακοποίηση Παιδιών – ΕΛΙΖΑ</span><span class="l-en">National Child Abuse Line – ELIZA</span></li>
-            <li><b>11528</b><span class="l-el">Γραμμή υποστήριξης για ΛΟΑΤΚΙ+ άτομα & οικογένειες</span><span class="l-en">Support line for LGBTQI+ people & families</span></li>
-            <li><b>11525</b><span class="l-el">Μαζί για το Παιδί – συμβουλευτική για παιδιά & εφήβους</span><span class="l-en">Together for Children – counselling for children & teens</span></li>
-            <li><b>1107</b><span class="l-el">Εθνική Γραμμή Παιδικής Προστασίας (24ωρη)</span><span class="l-en">National Child Protection Line (24h)</span></li>
-            <li><b>15900</b><span class="l-el">Γραμμή SOS για την κακοποίηση γυναικών</span><span class="l-en">SOS Line for abuse against women</span></li>
-            <li><b>166</b><span class="l-el">ΕΚΑΒ – επείγοντα περιστατικά</span><span class="l-en">EKAV – medical emergencies</span></li>
-          </ul>
-        </div>
+  <div class="wrap" style="max-width: 860px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <span class="eyebrow rv"><span class="l-el">Συχνές Ερωτήσεις</span><span class="l-en">FAQ</span></span>
+      <h2 class="sec-title rv l-el">Χρήσιμες πληροφορίες πριν <em>ξεκινήσουμε</em></h2>
+      <h2 class="sec-title rv l-en">Useful information before <em>we begin</em></h2>
+      <p class="lead rv d1 l-el" style="margin: 0 auto;">Απαντήσεις σε ερωτήματα που συχνά προκύπτουν πριν το πρώτο ραντεβού.</p>
+      <p class="lead rv d1 l-en" style="margin: 0 auto;">Answers to questions that often come up before the first session.</p>
+    </div>
+    <div class="acc-list">
+      <details class="acc rv" open><summary><span><span class="l-el">Πότε χρειάζεται να απευθυνθώ σε ψυχολόγο;</span><span class="l-en">When should I turn to a psychologist?</span></span><span class="pl"></span></summary><div class="body">
+        <div class="l-el"><p>Στην πορεία της ζωής όλοι ερχόμαστε αντιμέτωποι με προκλήσεις — από περιόδους έντονου άγχους ή θλίψης, μέχρι δυσκολίες στις σχέσεις μας. Η αναζήτηση ψυχολογικής υποστήριξης δεν αφορά μόνο την αντιμετώπιση δυσκολιών, αλλά και όσους θέλουν να γνωρίσουν καλύτερα τον εαυτό τους και να επενδύσουν στην προσωπική τους εξέλιξη. Ενδεικτικοί λόγοι:</p><ul><li>Αίσθημα αδυναμίας να ελέγξετε τα συναισθήματά σας (άγχος, θυμός, θλίψη).</li><li>Επιδείνωση των σχέσεων με αγαπημένα πρόσωπα.</li><li>Αίσθηση ότι η ζωή δεν ακολουθεί την πορεία που επιθυμείτε.</li><li>Επίμονη σωματική δυσφορία που σχετίζεται με έντονα συναισθήματα.</li><li>Δυσκολία να απολαύσετε την καθημερινότητα ή να βρείτε νόημα σε αυτή.</li><li>Επιθυμία για προσωπική ανάπτυξη και αυτογνωσία.</li></ul><p>Η απόφαση να ζητήσει κάποιος βοήθεια δεν είναι ένδειξη αδυναμίας, αλλά πράξη δύναμης, φροντίδας και υπευθυνότητας.</p></div>
+        <div class="l-en"><p>Throughout life we all face challenges — from periods of intense anxiety or sadness to difficulties in our relationships. Seeking psychological support is not only about overcoming difficulties, but also for those who wish to know themselves better and invest in their personal growth. Common reasons include:</p><ul><li>Feeling unable to manage your emotions (anxiety, anger, sadness).</li><li>Deteriorating relationships with loved ones.</li><li>A sense that life is not going the way you want.</li><li>Persistent physical discomfort linked to intense emotions.</li><li>Difficulty enjoying everyday life or finding meaning in it.</li><li>A desire for personal growth and self-awareness.</li></ul><p>Deciding to ask for help is not a sign of weakness, but an act of strength, care and responsibility.</p></div>
+      </div></details>
+      <details class="acc rv"><summary><span><span class="l-el">Πώς να επιλέξω ψυχολόγο;</span><span class="l-en">How do I choose a psychologist?</span></span><span class="pl"></span></summary><div class="body">
+        <p class="l-el">Είναι σημαντικό να βεβαιωθείτε ότι ο ψυχολόγος είναι απόφοιτος τμήματος ψυχολογίας και διαθέτει άδεια ασκήσεως επαγγέλματος. Η Γνωσιακή-Συμπεριφοριστική Ψυχοθεραπεία προσφέρεται από ψυχολόγους ή ψυχιάτρους με νόμιμη άδεια που έχουν ολοκληρώσει αναγνωρισμένη, πολυετή, πιστοποιημένη εκπαίδευση με θεωρητική κατάρτιση, πρακτική άσκηση και εποπτεία. Εξίσου σημαντική είναι μια καλή θεραπευτική σχέση βασισμένη στην εμπιστοσύνη. Έχετε πάντα το δικαίωμα να ρωτήσετε για το ακαδημαϊκό υπόβαθρο, την άδεια και την εκπαίδευση του θεραπευτή σας.</p>
+        <p class="l-en">It’s important to make sure the psychologist has graduated from a psychology department and holds a licence to practise. Cognitive Behavioural Therapy is provided by licensed psychologists or psychiatrists who have completed recognised, multi-year, certified training including theory, practice and supervision. Just as important is a good therapeutic relationship built on trust. You always have the right to ask about your therapist’s academic background, licence and training.</p>
+      </div></details>
+      <details class="acc rv"><summary><span><span class="l-el">Ποια η διαφορά ψυχολόγου, ψυχιάτρου, ψυχοθεραπευτή;</span><span class="l-en">Psychologist, psychiatrist, psychotherapist — what’s the difference?</span></span><span class="pl"></span></summary><div class="body">
+        <p class="l-el">Ο <b>ψυχίατρος</b> έχει σπουδάσει ιατρική με ειδικότητα στην ψυχιατρική· μπορεί να θέσει διάγνωση και να συνταγογραφήσει φαρμακευτική αγωγή όταν κρίνεται απαραίτητη. Ο <b>ψυχολόγος</b> είναι πτυχιούχος ψυχολογίας με άδεια ασκήσεως· μέσα από την ψυχοθεραπεία βοηθά το άτομο να κατανοήσει τις δυσκολίες του και να αναπτύξει αποτελεσματικότερους τρόπους σκέψης και διαχείρισης. Συχνά οι δύο ειδικότητες συνεργάζονται για το βέλτιστο αποτέλεσμα. Ο όρος <b>ψυχοθεραπευτής</b> δεν κατοχυρώνεται νομικά στην Ελλάδα και συνήθως αφορά ψυχολόγους ή ψυχιάτρους με επιπλέον εξειδικευμένη εκπαίδευση σε συγκεκριμένη ψυχοθεραπευτική μέθοδο.</p>
+        <p class="l-en">A <b>psychiatrist</b> has studied medicine and specialised in psychiatry; they can diagnose and prescribe medication when needed. A <b>psychologist</b> holds a psychology degree and a licence to practise; through psychotherapy they help a person understand their difficulties and develop more effective ways of thinking and coping. The two professions often collaborate for the best result. The term <b>psychotherapist</b> is not legally protected in Greece and usually refers to psychologists or psychiatrists with additional specialised training in a particular therapeutic method.</p>
+      </div></details>
+      <details class="acc rv"><summary><span><span class="l-el">Ποια η διαφορά ψυχανάλυσης και ψυχοθεραπείας;</span><span class="l-en">Psychoanalysis vs. psychotherapy?</span></span><span class="pl"></span></summary><div class="body">
+        <p class="l-el">Οι όροι συχνά συγχέονται, όμως δεν είναι ταυτόσημοι. Η ψυχανάλυση είναι μία από τις παλαιότερες προσεγγίσεις, που θεμελιώθηκε από τον Sigmund Freud. Σήμερα υπάρχουν και άλλες επιστημονικά τεκμηριωμένες μέθοδοι, η καθεμία με το δικό της θεωρητικό υπόβαθρο — όπως η Γνωσιακή-Συμπεριφοριστική Ψυχοθεραπεία, η Συστημική Ψυχοθεραπεία και η Θεραπεία Αποδοχής & Δέσμευσης. Ο όρος «ψυχοθεραπεία» είναι επομένως ευρύτερος και περιλαμβάνει πολλές διαφορετικές προσεγγίσεις.</p>
+        <p class="l-en">The terms are often confused, but they are not the same. Psychoanalysis is one of the oldest approaches, founded by Sigmund Freud. Today there are other scientifically supported methods, each with its own theoretical basis — such as Cognitive Behavioural Therapy, Systemic Therapy and Acceptance & Commitment Therapy. “Psychotherapy” is therefore a broader term that includes many different approaches.</p>
+      </div></details>
+      <details class="acc rv"><summary><span><span class="l-el">Πόσο διαρκεί η ψυχοθεραπεία;</span><span class="l-en">How long does therapy last?</span></span><span class="pl"></span></summary><div class="body">
+        <p class="l-el">Η ψυχοθεραπεία είναι μια πλήρως εξατομικευμένη διαδικασία, προσαρμοσμένη στις ανάγκες κάθε ατόμου, γι’ αυτό η διάρκειά της δεν μπορεί να καθοριστεί εκ των προτέρων με ακρίβεια. Ο αριθμός των συνεδριών εξαρτάται από παράγοντες όπως:</p>
+        <ul class="l-el"><li>η φύση και η πολυπλοκότητα των δυσκολιών</li><li>η ένταση των συμπτωμάτων</li><li>η θεραπευτική σχέση και η συνεργασία</li><li>το κίνητρο για αλλαγή και η δέσμευση στη διαδικασία</li></ul>
+        <p class="l-en">Therapy is a fully individualised process, tailored to each person’s needs, so its duration cannot be set precisely in advance. The number of sessions depends on factors such as:</p>
+        <ul class="l-en"><li>the nature and complexity of the difficulties</li><li>the intensity of the symptoms</li><li>the therapeutic relationship and collaboration</li><li>the motivation for change and commitment to the process</li></ul>
+      </div></details>
+      <details class="acc rv"><summary><span><span class="l-el">Πόσο διαρκεί μια συνεδρία και τι περιλαμβάνει;</span><span class="l-en">How long is a session and what does it involve?</span></span><span class="pl"></span></summary><div class="body">
+        <p class="l-el">Οι συνεδρίες πραγματοποιούνται μία φορά την εβδομάδα και έχουν διάρκεια 50 λεπτά. Στις πρώτες συνεδρίες γίνεται λήψη ιστορικού και διερεύνηση των δυσκολιών. Η εδραίωση μιας συνεργατικής θεραπευτικής σχέσης, η εξοικείωση με τη λογική του γνωσιακού-συμπεριφοριστικού μοντέλου και η συμφωνία για τους θεραπευτικούς στόχους αποτελούν τα βασικά κλειδιά για την έναρξη της θεραπείας.</p>
+        <p class="l-en">Sessions take place once a week and last 50 minutes. The first sessions involve taking a history and exploring your difficulties. Building a collaborative therapeutic relationship, becoming familiar with the logic of the cognitive-behavioural model and agreeing on therapeutic goals are the key foundations for beginning therapy.</p>
+      </div></details>
+      <details class="acc rv"><summary><span><span class="l-el">Τι ισχύει με το απόρρητο;</span><span class="l-en">What about confidentiality?</span></span><span class="pl"></span></summary><div class="body">
+        <p class="l-el">Σύμφωνα με την ισχύουσα νομοθεσία (Ν. 991/79, άρθρο 9), η ψυχολόγος δεσμεύεται από το επαγγελματικό απόρρητο, που διασφαλίζει την εχεμύθεια των προσωπικών σας πληροφοριών. Καμία πληροφορία δεν κοινοποιείται σε τρίτους χωρίς τη ρητή συγκατάθεσή σας. Η άρση του απορρήτου μπορεί να γίνει μόνο σε περιπτώσεις σοβαρού κινδύνου για τη ζωή ή τη σωματική ακεραιότητα του ίδιου ή άλλων. Η τήρηση του απορρήτου είναι βασική προϋπόθεση για ένα ασφαλές θεραπευτικό πλαίσιο, όπου μπορείτε να εκφραστείτε ελεύθερα.</p>
+        <p class="l-en">Under current legislation (Law 991/79, article 9), the psychologist is bound by professional confidentiality, which safeguards the privacy of your personal information. No information is shared with third parties without your explicit consent. Confidentiality may be lifted only in cases of serious risk to the life or physical safety of yourself or others. Maintaining confidentiality is a fundamental condition for a safe therapeutic framework in which you can express yourself freely.</p>
+      </div></details>
+      <details class="acc rv"><summary><span><span class="l-el">Ποια είναι η πολιτική ακύρωσης συνεδριών;</span><span class="l-en">What is the cancellation policy?</span></span><span class="pl"></span></summary><div class="body">
+        <p class="l-el">Σε περίπτωση ακύρωσης, είναι απαραίτητη η ενημέρωση τουλάχιστον 24 ώρες νωρίτερα, ώστε να είναι εφικτός ο επαναπρογραμματισμός μέσα στην ίδια εβδομάδα. Χωρίς έγκαιρη ενημέρωση, η συνεδρία χρεώνεται κανονικά, ως αποζημίωση για την κράτηση του χρόνου — εξαιρούνται έκτακτες περιπτώσεις, όπως ζητήματα υγείας ή άλλα σοβαρά απρόβλεπτα γεγονότα. Σε περίπτωση ακύρωσης από την πλευρά της θεραπεύτριας, γίνεται προσπάθεια έγκαιρης ενημέρωσης και επαναπρογραμματισμού μέσα στην ίδια εβδομάδα.</p>
+        <p class="l-en">If you need to cancel, please give at least 24 hours’ notice so the session can be rescheduled within the same week. Without timely notice, the session is charged in full, as compensation for the reserved time — except in emergencies such as health issues or other serious unforeseen events. If the therapist needs to cancel, every effort is made to inform you in good time and reschedule within the same week.</p>
+      </div></details>
+      <div class="helplines rv">
+        <h3 class="l-el">Δωρεάν γραμμές υποστήριξης</h3><h3 class="l-en">Free support helplines</h3>
+        <ul>
+          <li><b>10306</b><span class="l-el">Γραμμή Ψυχοκοινωνικής Υποστήριξης (24ωρη, ανώνυμη)</span><span class="l-en">Psychosocial Support Line (24h, anonymous)</span></li>
+          <li><b>1018</b><span class="l-el">Γραμμή Παρέμβασης στην Αυτοκτονία – ΚΛΙΜΑΚΑ</span><span class="l-en">Suicide Intervention Line – KLIMAKA</span></li>
+          <li><b>1056</b><span class="l-el">Γραμμή SOS – Το Χαμόγελο του Παιδιού</span><span class="l-en">SOS Line – The Smile of the Child</span></li>
+          <li><b>10454</b><span class="l-el">Εθνική Γραμμή για την Κακοποίηση Παιδιών – ΕΛΙΖΑ</span><span class="l-en">National Child Abuse Line – ELIZA</span></li>
+          <li><b>11528</b><span class="l-el">Γραμμή υποστήριξης για ΛΟΑΤΚΙ+ άτομα & οικογένειες</span><span class="l-en">Support line for LGBTQI+ people & families</span></li>
+          <li><b>11525</b><span class="l-el">Μαζί για το Παιδί – συμβουλευτική για παιδιά & εφήβους</span><span class="l-en">Together for Children – counselling for children & teens</span></li>
+          <li><b>1107</b><span class="l-el">Εθνική Γραμμή Παιδικής Προστασίας (24ωρη)</span><span class="l-en">National Child Protection Line (24h)</span></li>
+          <li><b>15900</b><span class="l-el">Γραμμή SOS για την κακοποίηση γυναικών</span><span class="l-en">SOS Line for abuse against women</span></li>
+          <li><b>166</b><span class="l-el">ΕΚΑΒ – επείγοντα περιστατικά</span><span class="l-en">EKAV – medical emergencies</span></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1140,7 +1132,7 @@ details.exd .exbody ul{margin:.45rem 0 .7rem 1.15rem;line-height:1.65;font-size:
     if (preloader) {
       setTimeout(function() {
         preloader.classList.add('hide');
-      }, 500);
+      }, 1600);
     }
   });
 
