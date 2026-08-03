@@ -162,14 +162,15 @@ nav.desk a.nl:hover::after{transform:scaleX(1);transform-origin:left}
   radial-gradient(60vw 44vw at 84% 10%, rgba(185,136,79,.14), transparent 60%),
   radial-gradient(48vw 40vw at 6% 92%, rgba(124,123,99,.16), transparent 62%),
   var(--paper)}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
-.h-eyebrow{opacity:0;animation:rise 1s var(--ease) .2s forwards; display:flex;}
+.hero .wrap{display:grid;grid-template-columns:1fr;gap:3rem;align-items:center;max-width:980px;}
+.h-eyebrow{opacity:0;animation:rise 1s var(--ease) .2s forwards; display:flex; text-transform:none!important; letter-spacing:.05em;}
 .hero h1{font-size:clamp(2.7rem,6vw,4.7rem);font-weight:500;margin:1.1rem 0 1.4rem;color:var(--ink)}
 .hero h1 .line{display:block;overflow:hidden}
 .hero h1 .line span{display:block;transform:translateY(110%);animation:up 1.1s var(--ease) forwards}
 .hero h1 .line:nth-child(1) span{animation-delay:.35s}
 .hero h1 .line:nth-child(2) span{animation-delay:.5s}
 .hero h1 .line:nth-child(3) span{animation-delay:.65s}
+.hero h1 .line:nth-child(4) span{animation-delay:.8s}
 .hero h1 em{font-style:italic;color:var(--bronze)}
 .hero .lead{opacity:0;animation:rise 1s var(--ease) .95s forwards; margin-bottom: 1rem;}
 .h-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.2rem;opacity:0;animation:rise 1s var(--ease) 1.15s forwards}
@@ -203,7 +204,7 @@ nav.desk a.nl:hover::after{transform:scaleX(1);transform-origin:left}
 .about{background:linear-gradient(var(--paper) 0,var(--paper-2) 18%,var(--paper-2) 100%)}
 .about .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,5rem);align-items:center}
 .a-photo{position:relative}
-.a-photo .frame{border-radius:200px 200px 22px 22px;overflow:hidden;box-shadow:0 30px 70px -28px rgba(54,46,35,.45);position:relative; aspect-ratio: 3/4;}
+.a-photo .frame{border-radius:200px 200px 22px 22px;overflow:hidden;box-shadow:0 30px 70px -28px rgba(54,46,35,.45);position:relative; aspect-ratio: 3/4; min-height: 420px;}
 .a-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease);cursor:zoom-in}
 .a-photo .frame:hover img{transform:scale(1.045)}
 .a-photo::after{content:"";position:absolute;inset:-16px -16px auto auto;width:120px;height:120px;border:1px solid var(--camel);border-radius:50%;opacity:.5;pointer-events:none}
@@ -277,7 +278,7 @@ nav.desk a.nl:hover::after{transform:scaleX(1);transform-origin:left}
 
 /* ---------- space gallery ---------- */
 .space{background:var(--paper)}
-.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:.9rem;margin-top:2.6rem}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:.9rem;margin-top:2.6rem; grid-auto-flow: dense;}
 .gal .g{border-radius:16px;overflow:hidden;position:relative;cursor:zoom-in}
 .gal .g img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease),filter 1s}
 .gal .g:hover img{transform:scale(1.07)}
@@ -381,10 +382,12 @@ footer .bottom a:hover{text-decoration:underline}
   .sv-grid{grid-template-columns:repeat(2,1fr)}
   .gal{grid-template-columns:repeat(3,1fr);grid-auto-rows:170px}
 }
+@media(max-width:860px){
+  .a-photo .frame{min-height:320px}
+}
 @media(max-width:880px){
   nav.desk .nl,nav.desk .cta{display:none}
   .burger{display:block}
-  .hero .wrap{grid-template-columns:1fr;gap:1.6rem}
   .h-fly{order:-1;margin-top:1rem}
   .h-fly svg{width:min(300px,62vw)}
   .hero{padding-top:7rem}
@@ -420,7 +423,6 @@ footer .bottom a:hover{text-decoration:underline}
 }
 
 /* — approach / expertise / interest form — */
-.hero .wrap{grid-template-columns:1fr;max-width:980px}
 .approach .epiq{margin:1.6rem 0 2.2rem;padding:1.4rem 1.6rem;border-left:3px solid var(--bronze,#b08d57);font-style:italic;font-size:1.12rem;line-height:1.65;background:rgba(176,141,87,.06);border-radius:0 12px 12px 0}
 .approach .epiq cite{display:block;margin-top:.7rem;font-style:normal;font-size:.82rem;letter-spacing:.06em;opacity:.75}
 .approach .txtcol{max-width:880px}
@@ -615,7 +617,7 @@ details.exd .exbody ul{margin:.45rem 0 .7rem 1.15rem;line-height:1.65;font-size:
     <h2 class="sec-title rv l-en">Cognitive-Behavioural <em>Psychotherapy</em></h2>
     <blockquote class="epiq rv d1">
       <span class="l-el">«Δεν είναι τα πράγματα που ταράζουν τους ανθρώπους, αλλά οι ερμηνείες τους για τα πράγματα.»</span>
-      <span class="l-en">“People are not disturbed by things, but by the views they take of them.”</span>
+      <span class="l-en">“People are not disturbed by things, but by the views take of them.”</span>
       <cite>— Επίκτητος · Epictetus</cite>
     </blockquote>
     <div class="txtcol">
@@ -879,12 +881,22 @@ details.exd .exbody ul{margin:.45rem 0 .7rem 1.15rem;line-height:1.65;font-size:
     <p class="lead rv d1 l-el">Ένας ήρεμος, ζεστός και φιλόξενος χώρος όπου ο σεβασμός και η αποδοχή αποτελούν τη βάση κάθε θεραπευτικής συνάντησης.</p>
     <p class="lead rv d1 l-en">A calm, warm and welcoming space where respect and acceptance form the foundation of every therapeutic meeting.</p>
     <div class="gal">
+      <!-- Σειρά 1-2 (Αριστερά μεγάλο) -->
       <div class="g w2 h2 rv-scale"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/ade960491c95d1ccdf692c0ef3313fd48caab32f/IMG_3402.jpeg" alt="Ο χώρος θεραπείας" class="zoom" loading="lazy"></div>
       <div class="g rv-scale d1"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/ade960491c95d1ccdf692c0ef3313fd48caab32f/IMG_3403.jpeg" alt="Χώρος συνεδριών" class="zoom" loading="lazy"></div>
       <div class="g rv-scale d2"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/ade960491c95d1ccdf692c0ef3313fd48caab32f/IMG_3404.jpeg" alt="Λεπτομέρεια χώρου" class="zoom" loading="lazy"></div>
       <div class="g rv-scale d1"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/ade960491c95d1ccdf692c0ef3313fd48caab32f/IMG_3405.jpeg" alt="Καθιστικό χώρου" class="zoom" loading="lazy"></div>
       <div class="g rv-scale d2"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/ade960491c95d1ccdf692c0ef3313fd48caab32f/IMG_3406.jpeg" alt="Είσοδος γραφείου" class="zoom" loading="lazy"></div>
+      
+      <!-- Σειρά 3-4 (Δεξιά μεγάλο) -->
       <div class="g w2 rv-scale d1"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/ade960491c95d1ccdf692c0ef3313fd48caab32f/IMG_3408.jpeg" alt="Λεπτομέρειες διακόσμησης" class="zoom" loading="lazy"></div>
+      <div class="g w2 h2 rv-scale d2"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/7da72a014017d369f9323d1ea71e501a8e987f47/13448594-79EE-47AB-9415-09777BD0E378.png" alt="Χώρος συνεδριών" class="zoom" loading="lazy"></div>
+      <div class="g rv-scale d1"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/7da72a014017d369f9323d1ea71e501a8e987f47/4F0100D3-DF3A-41E8-9C92-83B5212128BF.png" alt="Λεπτομέρεια χώρου" class="zoom" loading="lazy"></div>
+      <div class="g rv-scale d2"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/7da72a014017d369f9323d1ea71e501a8e987f47/730BA2A1-EA97-4E7B-92AD-56CD48695EEC.png" alt="Καθιστικό χώρου" class="zoom" loading="lazy"></div>
+      
+      <!-- Σειρά 5 (Δύο πανοραμικά) -->
+      <div class="g w2 rv-scale d1"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/7da72a014017d369f9323d1ea71e501a8e987f47/BFC8710E-5D64-4E58-96A4-442D894DD6DB.png" alt="Είσοδος γραφείου" class="zoom" loading="lazy"></div>
+      <div class="g w2 rv-scale d2"><img src="https://raw.githubusercontent.com/agelmet/VASILEIOU/7da72a014017d369f9323d1ea71e501a8e987f47/D3F5E498-511E-4B80-B265-3D9E3C195399.png" alt="Λεπτομέρειες διακόσμησης" class="zoom" loading="lazy"></div>
     </div>
   </div>
 </section>
