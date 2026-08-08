@@ -177,9 +177,10 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--sans);font-size:1.06rem;line-height:1.7;color:var(--ink);background:var(--paper);overflow-x:hidden}
+body{font-family:var(--sans);font-size:1.06rem;line-height:1.7;color:var(--ink);background:var(--paper)}
 [hidden]{display:none!important}
 img{max-width:100%;display:block}
+img,video,iframe,table{max-width:100%}
 a{color:inherit}
 ::selection{background:var(--camel);color:#fff}
 
@@ -417,7 +418,17 @@ nav.desk a.nl:hover::after{transform:scaleX(1);transform-origin:left}
 .reviews{background:var(--olive-deep);color:var(--paper);overflow:hidden}
 .reviews .eyebrow{color:#D9B888}.reviews .eyebrow::before{background:#D9B888}
 .reviews .sec-title{color:var(--paper)}.reviews .sec-title em{color:#D9B888}
-.marquee{margin-top:2.8rem;display:flex;flex-direction:column;gap:1.2rem}
+/* The two review rows are width:max-content and animate sideways, so they bleed far past
+   the viewport by design. They are clipped here, on the element that owns them, rather than
+   with overflow-x on <body>. clip (not hidden) keeps this from becoming a scroll container. */
+/* Same story one level up: .rv-l/.rv-r reveal elements start at translateX(±40px) and only
+   settle once scrolled into view, so the document width moved while you scrolled (.map was
+   the widest, +24px). Each section clips its own bleed. overflow-x:clip does not create a
+   scroll container, so .expertise .ex-img-col and .symb keep their position:sticky, and the
+   position:fixed nav / preloader / mobile menu / lightbox sit outside these boxes anyway.
+   <header id="hdr"> is deliberately excluded - it is the fixed nav, not a content section. */
+section,footer{overflow-x:clip}
+.marquee{margin-top:2.8rem;display:flex;flex-direction:column;gap:1.2rem;overflow-x:clip}
 .mrow{display:flex;gap:1.2rem;width:max-content;animation:scrollx 70s linear infinite}
 .mrow.rev{animation:scrollx-r 78s linear infinite}
 .marquee:hover .mrow{animation-play-state:paused}
